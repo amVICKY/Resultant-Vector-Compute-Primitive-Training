@@ -51,7 +51,7 @@ def alignment_score(
         "mean_cos_mean_resultant": cos_mean_vals.mean().item(),
         "mean_cos_svd_resultant":  cos_svd_vals.mean().item(),
         "std_cos":                 cos_svd_vals.std().item(),
-        "cos_value":               cos_svd_vals.numpy(),
+        "cos_values":               cos_svd_vals.numpy(),
     }
 
 # Run all metrics on every layer and return a unified results
