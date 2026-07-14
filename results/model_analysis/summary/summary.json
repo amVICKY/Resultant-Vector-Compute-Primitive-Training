@@ -1,0 +1,98 @@
+[
+  {
+    "model": "resnet18",
+    "n_layers": 21,
+    "n_groups": 4,
+    "n_shared_layers": 16,
+    "mean_ratio": 2.0587083473801613,
+    "max_ratio": 2.3232781887054443,
+    "n_ok": 0,
+    "frac_ok": 0.0,
+    "mean_nesting_angle_deg": 66.39932098388672,
+    "verdict": "INSUFFICIENT"
+  },
+  {
+    "model": "resnet50",
+    "n_layers": 54,
+    "n_groups": 10,
+    "n_shared_layers": 53,
+    "mean_ratio": 1.875019426615733,
+    "max_ratio": 2.4252490997314453,
+    "n_ok": 0,
+    "frac_ok": 0.0,
+    "mean_nesting_angle_deg": 37.309772703382706,
+    "verdict": "INSUFFICIENT"
+  },
+  {
+    "model": "vgg16",
+    "n_layers": 16,
+    "n_groups": 5,
+    "n_shared_layers": 14,
+    "mean_ratio": 1.7682810936655318,
+    "max_ratio": 2.1050772666931152,
+    "n_ok": 0,
+    "frac_ok": 0.0,
+    "mean_nesting_angle_deg": 66.95890350341797,
+    "verdict": "INSUFFICIENT"
+  },
+  {
+    "model": "densenet121",
+    "n_layers": 0,
+    "n_groups": 0,
+    "n_shared_layers": 0,
+    "mean_ratio": NaN,
+    "max_ratio": NaN,
+    "n_ok": 0,
+    "frac_ok": NaN,
+    "mean_nesting_angle_deg": NaN,
+    "verdict": "ERROR"
+  },
+  {
+    "model": "mobilenet_v3_large",
+    "n_layers": 64,
+    "n_groups": 17,
+    "n_shared_layers": 60,
+    "mean_ratio": 1.5547239859898885,
+    "max_ratio": 2.952455520629883,
+    "n_ok": 6,
+    "frac_ok": 0.1,
+    "mean_nesting_angle_deg": 14.584868258900112,
+    "verdict": "INSUFFICIENT"
+  },
+  {
+    "model": "efficientnet_b0",
+    "n_layers": 82,
+    "n_groups": 19,
+    "n_shared_layers": 76,
+    "mean_ratio": 1.6654536347640188,
+    "max_ratio": 2.9044973850250244,
+    "n_ok": 20,
+    "frac_ok": 0.2631578947368421,
+    "mean_nesting_angle_deg": 20.609401808844673,
+    "verdict": "INSUFFICIENT"
+  },
+  {
+    "model": "vit_b_16",
+    "n_layers": 0,
+    "n_groups": 0,
+    "n_shared_layers": 0,
+    "mean_ratio": NaN,
+    "max_ratio": NaN,
+    "n_ok": 0,
+    "frac_ok": NaN,
+    "mean_nesting_angle_deg": NaN,
+    "verdict": "ERROR"
+  },
+  {
+    "model": "swin_t",
+    "n_layers": 53,
+    "n_groups": 6,
+    "n_shared_layers": 52,
+    "mean_ratio": 1.8868306829379156,
+    "max_ratio": 2.6141610145568848,
+    "n_ok": 0,
+    "frac_ok": 0.0,
+    "mean_nesting_angle_deg": 38.112320018949966,
+    "verdict": "INSUFFICIENT"
+  }
+]

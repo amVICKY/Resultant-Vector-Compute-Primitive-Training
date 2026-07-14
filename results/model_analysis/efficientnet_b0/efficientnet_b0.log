@@ -1,0 +1,130 @@
+20:03:40 | INFO    | [1/5] Loading efficientnet_b0 (pretrained)...
+20:03:44 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+20:03:45 | INFO    |       82 weight matrices extracted
+20:03:45 | INFO    | [3/5] Grouping layers by input dimension...
+20:03:45 | INFO    |       19 shareable groups (input-dim shared by >1 layer)
+20:03:45 | INFO    |       d=6    : 2 layers  -> ['features.2.1.block.2.fc2', 'features.3.0.block.2.fc2']
+20:03:45 | INFO    |       d=9    : 7 layers  -> ['features.1.0.block.0.0', 'features.2.0.block.1.0', 'features.2.1.block.1.0', 'features.4.0.block.1.0', 'features.4.1.block.1.0', 'features.4.2.block.1.0', 'features.7.0.block.1.0']
+20:03:45 | INFO    |       d=10   : 2 layers  -> ['features.3.1.block.2.fc2', 'features.4.0.block.2.fc2']
+20:03:45 | INFO    |       d=20   : 3 layers  -> ['features.4.1.block.2.fc2', 'features.4.2.block.2.fc2', 'features.5.0.block.2.fc2']
+20:03:45 | INFO    |       d=24   : 2 layers  -> ['features.2.1.block.0.0', 'features.3.0.block.0.0']
+20:03:45 | INFO    |       d=25   : 9 layers  -> ['features.3.0.block.1.0', 'features.3.1.block.1.0', 'features.5.0.block.1.0', 'features.5.1.block.1.0', 'features.5.2.block.1.0', 'features.6.0.block.1.0', 'features.6.1.block.1.0', 'features.6.2.block.1.0', 'features.6.3.block.1.0']
+20:03:45 | INFO    |       d=28   : 3 layers  -> ['features.5.1.block.2.fc2', 'features.5.2.block.2.fc2', 'features.6.0.block.2.fc2']
+20:03:45 | INFO    |       d=32   : 2 layers  -> ['features.1.0.block.1.fc1', 'features.1.0.block.2.0']
+20:03:45 | INFO    |       d=40   : 2 layers  -> ['features.3.1.block.0.0', 'features.4.0.block.0.0']
+20:03:45 | INFO    |       d=48   : 4 layers  -> ['features.6.1.block.2.fc2', 'features.6.2.block.2.fc2', 'features.6.3.block.2.fc2', 'features.7.0.block.2.fc2']
+20:03:45 | INFO    |       d=80   : 3 layers  -> ['features.4.1.block.0.0', 'features.4.2.block.0.0', 'features.5.0.block.0.0']
+20:03:45 | INFO    |       d=96   : 2 layers  -> ['features.2.0.block.2.fc1', 'features.2.0.block.3.0']
+20:03:45 | INFO    |       d=112  : 3 layers  -> ['features.5.1.block.0.0', 'features.5.2.block.0.0', 'features.6.0.block.0.0']
+20:03:45 | INFO    |       d=144  : 4 layers  -> ['features.2.1.block.2.fc1', 'features.2.1.block.3.0', 'features.3.0.block.2.fc1', 'features.3.0.block.3.0']
+20:03:45 | INFO    |       d=192  : 4 layers  -> ['features.6.1.block.0.0', 'features.6.2.block.0.0', 'features.6.3.block.0.0', 'features.7.0.block.0.0']
+20:03:45 | INFO    |       d=240  : 4 layers  -> ['features.3.1.block.2.fc1', 'features.3.1.block.3.0', 'features.4.0.block.2.fc1', 'features.4.0.block.3.0']
+20:03:45 | INFO    |       d=480  : 6 layers  -> ['features.4.1.block.2.fc1', 'features.4.1.block.3.0', 'features.4.2.block.2.fc1', 'features.4.2.block.3.0', 'features.5.0.block.2.fc1', 'features.5.0.block.3.0']
+20:03:45 | INFO    |       d=672  : 6 layers  -> ['features.5.1.block.2.fc1', 'features.5.1.block.3.0', 'features.5.2.block.2.fc1', 'features.5.2.block.3.0', 'features.6.0.block.2.fc1', 'features.6.0.block.3.0']
+20:03:45 | INFO    |       d=1152 : 8 layers  -> ['features.6.1.block.2.fc1', 'features.6.1.block.3.0', 'features.6.2.block.2.fc1', 'features.6.2.block.3.0', 'features.6.3.block.2.fc1', 'features.6.3.block.3.0', 'features.7.0.block.2.fc1', 'features.7.0.block.3.0']
+20:03:45 | INFO    | [4/5] Building global basis per group and measuring ratios...
+20:03:45 | INFO    |   Group d=9:
+20:03:45 | INFO    |     FAIL features.1.0.block.0.0                 k_l=   4  ratio=1.5003
+20:03:45 | INFO    |     OK   features.2.0.block.1.0                 k_l=   6  ratio=1.0940
+20:03:45 | INFO    |     WARN features.2.1.block.1.0                 k_l=   5  ratio=1.1724
+20:03:45 | INFO    |     WARN features.4.0.block.1.0                 k_l=   2  ratio=1.3553
+20:03:45 | INFO    |     OK   features.4.1.block.1.0                 k_l=   5  ratio=1.0781
+20:03:45 | INFO    |     OK   features.4.2.block.1.0                 k_l=   5  ratio=1.0395
+20:03:45 | INFO    |     WARN features.7.0.block.1.0                 k_l=   2  ratio=1.2977
+20:03:45 | INFO    |   Group d=32:
+20:03:45 | INFO    |     WARN features.1.0.block.1.fc1               k_l=   6  ratio=1.4717
+20:03:45 | INFO    |     WARN features.1.0.block.2.0                 k_l=  12  ratio=1.4672
+20:03:45 | INFO    |   Group d=96:
+20:03:45 | INFO    |     WARN features.2.0.block.2.fc1               k_l=   3  ratio=1.4837
+20:03:45 | INFO    |     WARN features.2.0.block.3.0                 k_l=  17  ratio=1.2592
+20:03:45 | INFO    |   Group d=24:
+20:03:45 | INFO    |     OK   features.2.1.block.0.0                 k_l=  18  ratio=1.1443
+20:03:45 | INFO    |     OK   features.3.0.block.0.0                 k_l=  20  ratio=1.1319
+20:03:45 | INFO    |   Group d=144:
+20:03:45 | INFO    |     FAIL features.2.1.block.2.fc1               k_l=   4  ratio=1.7862
+20:03:45 | INFO    |     FAIL features.2.1.block.3.0                 k_l=  18  ratio=2.1933
+20:03:45 | INFO    |     FAIL features.3.0.block.2.fc1               k_l=   4  ratio=2.0713
+20:03:45 | INFO    |     FAIL features.3.0.block.3.0                 k_l=  32  ratio=2.2326
+20:03:45 | INFO    |   Group d=6:
+20:03:45 | INFO    |     FAIL features.2.1.block.2.fc2               k_l=   5  ratio=2.2752
+20:03:45 | INFO    |     OK   features.3.0.block.2.fc2               k_l=   5  ratio=1.0974
+20:03:45 | INFO    |   Group d=25:
+20:03:45 | INFO    |     FAIL features.3.0.block.1.0                 k_l=   4  ratio=1.5266
+20:03:45 | INFO    |     WARN features.3.1.block.1.0                 k_l=   6  ratio=1.3022
+20:03:45 | INFO    |     WARN features.5.0.block.1.0                 k_l=   5  ratio=1.2870
+20:03:45 | INFO    |     OK   features.5.1.block.1.0                 k_l=   7  ratio=1.0919
+20:03:45 | INFO    |     OK   features.5.2.block.1.0                 k_l=   7  ratio=1.0799
+20:03:45 | INFO    |     FAIL features.6.0.block.1.0                 k_l=   2  ratio=1.7092
+20:03:45 | INFO    |     OK   features.6.1.block.1.0                 k_l=   7  ratio=1.1252
+20:03:45 | INFO    |     OK   features.6.2.block.1.0                 k_l=   7  ratio=1.1006
+20:03:45 | INFO    |     OK   features.6.3.block.1.0                 k_l=   8  ratio=1.1237
+20:03:45 | INFO    |   Group d=40:
+20:03:45 | INFO    |     OK   features.3.1.block.0.0                 k_l=  29  ratio=1.0708
+20:03:45 | INFO    |     OK   features.4.0.block.0.0                 k_l=  32  ratio=1.1262
+20:03:45 | INFO    |   Group d=240:
+20:03:45 | INFO    |     FAIL features.3.1.block.2.fc1               k_l=   9  ratio=2.9045
+20:03:45 | INFO    |     FAIL features.3.1.block.3.0                 k_l=  29  ratio=2.1948
+20:03:45 | INFO    |     FAIL features.4.0.block.2.fc1               k_l=   8  ratio=2.1256
+20:03:45 | INFO    |     FAIL features.4.0.block.3.0                 k_l=  60  ratio=2.0776
+20:03:45 | INFO    |   Group d=10:
+20:03:45 | INFO    |     WARN features.3.1.block.2.fc2               k_l=   9  ratio=1.2190
+20:03:45 | INFO    |     OK   features.4.0.block.2.fc2               k_l=   7  ratio=1.1496
+20:03:45 | INFO    |   Group d=80:
+20:03:45 | INFO    |     WARN features.4.1.block.0.0                 k_l=  56  ratio=1.1756
+20:03:45 | INFO    |     WARN features.4.2.block.0.0                 k_l=  58  ratio=1.1683
+20:03:45 | INFO    |     WARN features.5.0.block.0.0                 k_l=  61  ratio=1.2337
+20:03:45 | INFO    |   Group d=480:
+20:03:46 | INFO    |     FAIL features.4.1.block.2.fc1               k_l=  16  ratio=2.5121
+20:03:46 | INFO    |     FAIL features.4.1.block.3.0                 k_l=  58  ratio=2.5854
+20:03:46 | INFO    |     FAIL features.4.2.block.2.fc1               k_l=  16  ratio=2.4749
+20:03:46 | INFO    |     FAIL features.4.2.block.3.0                 k_l=  59  ratio=2.6004
+20:03:46 | INFO    |     FAIL features.5.0.block.2.fc1               k_l=  16  ratio=2.2911
+20:03:46 | INFO    |     FAIL features.5.0.block.3.0                 k_l=  87  ratio=2.5500
+20:03:46 | INFO    |   Group d=20:
+20:03:46 | INFO    |     WARN features.4.1.block.2.fc2               k_l=  16  ratio=1.1662
+20:03:46 | INFO    |     OK   features.4.2.block.2.fc2               k_l=  16  ratio=1.1034
+20:03:46 | INFO    |     WARN features.5.0.block.2.fc2               k_l=  16  ratio=1.2259
+20:03:46 | INFO    |   Group d=112:
+20:03:46 | INFO    |     OK   features.5.1.block.0.0                 k_l=  83  ratio=1.1286
+20:03:46 | INFO    |     WARN features.5.2.block.0.0                 k_l=  79  ratio=1.1833
+20:03:46 | INFO    |     WARN features.6.0.block.0.0                 k_l=  83  ratio=1.2050
+20:03:46 | INFO    |   Group d=672:
+20:03:46 | INFO    |     FAIL features.5.1.block.2.fc1               k_l=  23  ratio=2.4140
+20:03:46 | INFO    |     FAIL features.5.1.block.3.0                 k_l=  83  ratio=2.4586
+20:03:46 | INFO    |     FAIL features.5.2.block.2.fc1               k_l=  23  ratio=2.3389
+20:03:46 | INFO    |     FAIL features.5.2.block.3.0                 k_l=  81  ratio=2.4619
+20:03:46 | INFO    |     WARN features.6.0.block.2.fc1               k_l=   5  ratio=1.3965
+20:03:46 | INFO    |     FAIL features.6.0.block.3.0                 k_l= 155  ratio=2.4534
+20:03:46 | INFO    |   Group d=28:
+20:03:46 | INFO    |     OK   features.5.1.block.2.fc2               k_l=  23  ratio=1.1209
+20:03:46 | INFO    |     OK   features.5.2.block.2.fc2               k_l=  23  ratio=1.0901
+20:03:46 | INFO    |     WARN features.6.0.block.2.fc2               k_l=   5  ratio=1.3015
+20:03:46 | INFO    |   Group d=192:
+20:03:46 | INFO    |     WARN features.6.1.block.0.0                 k_l= 148  ratio=1.1693
+20:03:46 | INFO    |     WARN features.6.2.block.0.0                 k_l= 146  ratio=1.1536
+20:03:46 | INFO    |     WARN features.6.3.block.0.0                 k_l= 147  ratio=1.1598
+20:03:46 | INFO    |     WARN features.7.0.block.0.0                 k_l= 152  ratio=1.2125
+20:03:46 | INFO    |   Group d=1152:
+20:03:47 | INFO    |     FAIL features.6.1.block.2.fc1               k_l=  39  ratio=2.5042
+20:03:47 | INFO    |     FAIL features.6.1.block.3.0                 k_l= 149  ratio=2.7424
+20:03:47 | INFO    |     FAIL features.6.2.block.2.fc1               k_l=  40  ratio=2.5871
+20:03:47 | INFO    |     FAIL features.6.2.block.3.0                 k_l= 149  ratio=2.7486
+20:03:47 | INFO    |     FAIL features.6.3.block.2.fc1               k_l=  41  ratio=2.7419
+20:03:47 | INFO    |     FAIL features.6.3.block.3.0                 k_l= 150  ratio=2.7656
+20:03:47 | INFO    |     FAIL features.7.0.block.2.fc1               k_l=  39  ratio=2.5627
+20:03:47 | INFO    |     FAIL features.7.0.block.3.0                 k_l= 263  ratio=2.5984
+20:03:47 | INFO    |   Group d=48:
+20:03:47 | INFO    |     OK   features.6.1.block.2.fc2               k_l=  40  ratio=1.1364
+20:03:47 | INFO    |     WARN features.6.2.block.2.fc2               k_l=  39  ratio=1.1622
+20:03:47 | INFO    |     OK   features.6.3.block.2.fc2               k_l=  40  ratio=1.1449
+20:03:47 | INFO    |     WARN features.7.0.block.2.fc2               k_l=  37  ratio=1.1794
+20:03:48 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+20:03:49 | INFO    | =================================================================
+20:03:49 | INFO    |   PHASE 2 VERDICT — efficientnet_b0
+20:03:49 | INFO    | =================================================================
+20:03:49 | INFO    |   Mean reconstruction ratio : 1.6655
+20:03:49 | INFO    |   Max reconstruction ratio  : 2.9045
+20:03:49 | INFO    |   Layers well-served (< 1.15): 20 / 76
+20:03:49 | INFO    |   Mean nesting angle (deg)  : 20.6
+20:03:49 | INFO    |   -> SHARED BASIS INSUFFICIENT (layers too diverse for one basis)
+20:03:49 | INFO    | =================================================================

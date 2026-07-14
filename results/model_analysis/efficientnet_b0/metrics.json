@@ -1,0 +1,1324 @@
+{
+  "model": "efficientnet_b0",
+  "tau": 0.9,
+  "layers": {
+    "features.0.0": {
+      "shape": [
+        32,
+        27
+      ],
+      "rank1_energy": 0.26670002937316895,
+      "mean_cos_svd_resultant": 0.39085114002227783,
+      "mean_cos_mean_resultant": 0.33061498403549194,
+      "std_cos": 0.2090064138174057,
+      "significant_rank": 6,
+      "significant_rank_ratio": 0.2222222222222222
+    },
+    "features.1.0.block.0.0": {
+      "shape": [
+        32,
+        9
+      ],
+      "rank1_energy": 0.46150413155555725,
+      "mean_cos_svd_resultant": 0.7360228896141052,
+      "mean_cos_mean_resultant": 0.7322567105293274,
+      "std_cos": 0.2870588004589081,
+      "significant_rank": 4,
+      "significant_rank_ratio": 0.4444444444444444,
+      "reconstruction_ratio": 1.5003424882888794,
+      "group_input_dim": 9
+    },
+    "features.1.0.block.1.fc1": {
+      "shape": [
+        8,
+        32
+      ],
+      "rank1_energy": 0.3648994565010071,
+      "mean_cos_svd_resultant": 0.4667748212814331,
+      "mean_cos_mean_resultant": 0.509639322757721,
+      "std_cos": 0.29447126388549805,
+      "significant_rank": 6,
+      "significant_rank_ratio": 0.75,
+      "reconstruction_ratio": 1.4717075824737549,
+      "group_input_dim": 32
+    },
+    "features.1.0.block.1.fc2": {
+      "shape": [
+        32,
+        8
+      ],
+      "rank1_energy": 0.38304123282432556,
+      "mean_cos_svd_resultant": 0.4360785484313965,
+      "mean_cos_mean_resultant": 0.4224410653114319,
+      "std_cos": 0.32539522647857666,
+      "significant_rank": 5,
+      "significant_rank_ratio": 0.625
+    },
+    "features.1.0.block.2.0": {
+      "shape": [
+        16,
+        32
+      ],
+      "rank1_energy": 0.16472259163856506,
+      "mean_cos_svd_resultant": 0.18397514522075653,
+      "mean_cos_mean_resultant": 0.2590543329715729,
+      "std_cos": 0.25995978713035583,
+      "significant_rank": 12,
+      "significant_rank_ratio": 0.75,
+      "reconstruction_ratio": 1.4671722650527954,
+      "group_input_dim": 32
+    },
+    "features.2.0.block.0.0": {
+      "shape": [
+        96,
+        16
+      ],
+      "rank1_energy": 0.18579187989234924,
+      "mean_cos_svd_resultant": 0.2605426609516144,
+      "mean_cos_mean_resultant": 0.224134162068367,
+      "std_cos": 0.30367711186408997,
+      "significant_rank": 12,
+      "significant_rank_ratio": 0.75
+    },
+    "features.2.0.block.1.0": {
+      "shape": [
+        96,
+        9
+      ],
+      "rank1_energy": 0.35137632489204407,
+      "mean_cos_svd_resultant": 0.5796061158180237,
+      "mean_cos_mean_resultant": 0.3177720010280609,
+      "std_cos": 0.34293419122695923,
+      "significant_rank": 6,
+      "significant_rank_ratio": 0.6666666666666666,
+      "reconstruction_ratio": 1.093955397605896,
+      "group_input_dim": 9
+    },
+    "features.2.0.block.2.fc1": {
+      "shape": [
+        4,
+        96
+      ],
+      "rank1_energy": 0.4891303479671478,
+      "mean_cos_svd_resultant": 0.47812023758888245,
+      "mean_cos_mean_resultant": 0.5844500064849854,
+      "std_cos": 0.36758673191070557,
+      "significant_rank": 3,
+      "significant_rank_ratio": 0.75,
+      "reconstruction_ratio": 1.4837102890014648,
+      "group_input_dim": 96
+    },
+    "features.2.0.block.2.fc2": {
+      "shape": [
+        96,
+        4
+      ],
+      "rank1_energy": 0.4880622327327728,
+      "mean_cos_svd_resultant": 0.47627297043800354,
+      "mean_cos_mean_resultant": 0.7423479557037354,
+      "std_cos": 0.29514390230178833,
+      "significant_rank": 3,
+      "significant_rank_ratio": 0.75
+    },
+    "features.2.0.block.3.0": {
+      "shape": [
+        24,
+        96
+      ],
+      "rank1_energy": 0.10206224769353867,
+      "mean_cos_svd_resultant": 0.2674931585788727,
+      "mean_cos_mean_resultant": 0.2103063464164734,
+      "std_cos": 0.17000174522399902,
+      "significant_rank": 17,
+      "significant_rank_ratio": 0.7083333333333334,
+      "reconstruction_ratio": 1.2591551542282104,
+      "group_input_dim": 96
+    },
+    "features.2.1.block.0.0": {
+      "shape": [
+        144,
+        24
+      ],
+      "rank1_energy": 0.12593120336532593,
+      "mean_cos_svd_resultant": 0.2526860237121582,
+      "mean_cos_mean_resultant": 0.23093754053115845,
+      "std_cos": 0.1934632658958435,
+      "significant_rank": 18,
+      "significant_rank_ratio": 0.75,
+      "reconstruction_ratio": 1.1443219184875488,
+      "group_input_dim": 24
+    },
+    "features.2.1.block.1.0": {
+      "shape": [
+        144,
+        9
+      ],
+      "rank1_energy": 0.5984393954277039,
+      "mean_cos_svd_resultant": 0.669285237789154,
+      "mean_cos_mean_resultant": 0.6608939170837402,
+      "std_cos": 0.30455338954925537,
+      "significant_rank": 5,
+      "significant_rank_ratio": 0.5555555555555556,
+      "reconstruction_ratio": 1.1724003553390503,
+      "group_input_dim": 9
+    },
+    "features.2.1.block.2.fc1": {
+      "shape": [
+        6,
+        144
+      ],
+      "rank1_energy": 0.3522675335407257,
+      "mean_cos_svd_resultant": 0.4104130268096924,
+      "mean_cos_mean_resultant": 0.31591060757637024,
+      "std_cos": 0.2987593412399292,
+      "significant_rank": 4,
+      "significant_rank_ratio": 0.6666666666666666,
+      "reconstruction_ratio": 1.786241888999939,
+      "group_input_dim": 144
+    },
+    "features.2.1.block.2.fc2": {
+      "shape": [
+        144,
+        6
+      ],
+      "rank1_energy": 0.3598818778991699,
+      "mean_cos_svd_resultant": 0.514676034450531,
+      "mean_cos_mean_resultant": 0.46345704793930054,
+      "std_cos": 0.2972659766674042,
+      "significant_rank": 5,
+      "significant_rank_ratio": 0.8333333333333334,
+      "reconstruction_ratio": 2.2751731872558594,
+      "group_input_dim": 6
+    },
+    "features.2.1.block.3.0": {
+      "shape": [
+        24,
+        144
+      ],
+      "rank1_energy": 0.12387571483850479,
+      "mean_cos_svd_resultant": 0.28053566813468933,
+      "mean_cos_mean_resultant": 0.23993782699108124,
+      "std_cos": 0.17553207278251648,
+      "significant_rank": 18,
+      "significant_rank_ratio": 0.75,
+      "reconstruction_ratio": 2.193326950073242,
+      "group_input_dim": 144
+    },
+    "features.3.0.block.0.0": {
+      "shape": [
+        144,
+        24
+      ],
+      "rank1_energy": 0.08026693761348724,
+      "mean_cos_svd_resultant": 0.2267664521932602,
+      "mean_cos_mean_resultant": 0.2053232491016388,
+      "std_cos": 0.1967015415430069,
+      "significant_rank": 20,
+      "significant_rank_ratio": 0.8333333333333334,
+      "reconstruction_ratio": 1.1319478750228882,
+      "group_input_dim": 24
+    },
+    "features.3.0.block.1.0": {
+      "shape": [
+        144,
+        25
+      ],
+      "rank1_energy": 0.7502377033233643,
+      "mean_cos_svd_resultant": 0.8105074167251587,
+      "mean_cos_mean_resultant": 0.6062242388725281,
+      "std_cos": 0.29979145526885986,
+      "significant_rank": 4,
+      "significant_rank_ratio": 0.16,
+      "reconstruction_ratio": 1.526594638824463,
+      "group_input_dim": 25
+    },
+    "features.3.0.block.2.fc1": {
+      "shape": [
+        6,
+        144
+      ],
+      "rank1_energy": 0.4684072434902191,
+      "mean_cos_svd_resultant": 0.3299010694026947,
+      "mean_cos_mean_resultant": 0.34724852442741394,
+      "std_cos": 0.3666551113128662,
+      "significant_rank": 4,
+      "significant_rank_ratio": 0.6666666666666666,
+      "reconstruction_ratio": 2.0713388919830322,
+      "group_input_dim": 144
+    },
+    "features.3.0.block.2.fc2": {
+      "shape": [
+        144,
+        6
+      ],
+      "rank1_energy": 0.4246906638145447,
+      "mean_cos_svd_resultant": 0.3433150053024292,
+      "mean_cos_mean_resultant": 0.48553118109703064,
+      "std_cos": 0.25662171840667725,
+      "significant_rank": 5,
+      "significant_rank_ratio": 0.8333333333333334,
+      "reconstruction_ratio": 1.0973660945892334,
+      "group_input_dim": 6
+    },
+    "features.3.0.block.3.0": {
+      "shape": [
+        40,
+        144
+      ],
+      "rank1_energy": 0.05132920295000076,
+      "mean_cos_svd_resultant": 0.14751410484313965,
+      "mean_cos_mean_resultant": 0.1567743867635727,
+      "std_cos": 0.14686745405197144,
+      "significant_rank": 32,
+      "significant_rank_ratio": 0.8,
+      "reconstruction_ratio": 2.232564926147461,
+      "group_input_dim": 144
+    },
+    "features.3.1.block.0.0": {
+      "shape": [
+        240,
+        40
+      ],
+      "rank1_energy": 0.06203699856996536,
+      "mean_cos_svd_resultant": 0.19941186904907227,
+      "mean_cos_mean_resultant": 0.15324881672859192,
+      "std_cos": 0.15040792524814606,
+      "significant_rank": 29,
+      "significant_rank_ratio": 0.725,
+      "reconstruction_ratio": 1.0708143711090088,
+      "group_input_dim": 40
+    },
+    "features.3.1.block.1.0": {
+      "shape": [
+        240,
+        25
+      ],
+      "rank1_energy": 0.5258792042732239,
+      "mean_cos_svd_resultant": 0.6579299569129944,
+      "mean_cos_mean_resultant": 0.6175673007965088,
+      "std_cos": 0.29107123613357544,
+      "significant_rank": 6,
+      "significant_rank_ratio": 0.24,
+      "reconstruction_ratio": 1.3021740913391113,
+      "group_input_dim": 25
+    },
+    "features.3.1.block.2.fc1": {
+      "shape": [
+        10,
+        240
+      ],
+      "rank1_energy": 0.2440466582775116,
+      "mean_cos_svd_resultant": 0.25605255365371704,
+      "mean_cos_mean_resultant": 0.3095386326313019,
+      "std_cos": 0.2602105736732483,
+      "significant_rank": 9,
+      "significant_rank_ratio": 0.9,
+      "reconstruction_ratio": 2.9044973850250244,
+      "group_input_dim": 240
+    },
+    "features.3.1.block.2.fc2": {
+      "shape": [
+        240,
+        10
+      ],
+      "rank1_energy": 0.20663723349571228,
+      "mean_cos_svd_resultant": 0.40943580865859985,
+      "mean_cos_mean_resultant": 0.3799811601638794,
+      "std_cos": 0.2722908854484558,
+      "significant_rank": 9,
+      "significant_rank_ratio": 0.9,
+      "reconstruction_ratio": 1.2190446853637695,
+      "group_input_dim": 10
+    },
+    "features.3.1.block.3.0": {
+      "shape": [
+        40,
+        240
+      ],
+      "rank1_energy": 0.07181888818740845,
+      "mean_cos_svd_resultant": 0.1881641000509262,
+      "mean_cos_mean_resultant": 0.1602960079908371,
+      "std_cos": 0.15713374316692352,
+      "significant_rank": 29,
+      "significant_rank_ratio": 0.725,
+      "reconstruction_ratio": 2.1948373317718506,
+      "group_input_dim": 240
+    },
+    "features.4.0.block.0.0": {
+      "shape": [
+        240,
+        40
+      ],
+      "rank1_energy": 0.08158064633607864,
+      "mean_cos_svd_resultant": 0.23106293380260468,
+      "mean_cos_mean_resultant": 0.2302984744310379,
+      "std_cos": 0.15691566467285156,
+      "significant_rank": 32,
+      "significant_rank_ratio": 0.8,
+      "reconstruction_ratio": 1.1262489557266235,
+      "group_input_dim": 40
+    },
+    "features.4.0.block.1.0": {
+      "shape": [
+        240,
+        9
+      ],
+      "rank1_energy": 0.8394087553024292,
+      "mean_cos_svd_resultant": 0.8800114393234253,
+      "mean_cos_mean_resultant": 0.5127201676368713,
+      "std_cos": 0.30028513073921204,
+      "significant_rank": 2,
+      "significant_rank_ratio": 0.2222222222222222,
+      "reconstruction_ratio": 1.3553171157836914,
+      "group_input_dim": 9
+    },
+    "features.4.0.block.2.fc1": {
+      "shape": [
+        10,
+        240
+      ],
+      "rank1_energy": 0.17885547876358032,
+      "mean_cos_svd_resultant": 0.36992764472961426,
+      "mean_cos_mean_resultant": 0.38933879137039185,
+      "std_cos": 0.20056138932704926,
+      "significant_rank": 8,
+      "significant_rank_ratio": 0.8,
+      "reconstruction_ratio": 2.125559091567993,
+      "group_input_dim": 240
+    },
+    "features.4.0.block.2.fc2": {
+      "shape": [
+        240,
+        10
+      ],
+      "rank1_energy": 0.23160682618618011,
+      "mean_cos_svd_resultant": 0.4694509208202362,
+      "mean_cos_mean_resultant": 0.4881047308444977,
+      "std_cos": 0.2621157169342041,
+      "significant_rank": 7,
+      "significant_rank_ratio": 0.7,
+      "reconstruction_ratio": 1.1495885848999023,
+      "group_input_dim": 10
+    },
+    "features.4.0.block.3.0": {
+      "shape": [
+        80,
+        240
+      ],
+      "rank1_energy": 0.030444839969277382,
+      "mean_cos_svd_resultant": 0.1288895308971405,
+      "mean_cos_mean_resultant": 0.10392957925796509,
+      "std_cos": 0.09943356364965439,
+      "significant_rank": 60,
+      "significant_rank_ratio": 0.75,
+      "reconstruction_ratio": 2.0775957107543945,
+      "group_input_dim": 240
+    },
+    "features.4.1.block.0.0": {
+      "shape": [
+        480,
+        80
+      ],
+      "rank1_energy": 0.048461589962244034,
+      "mean_cos_svd_resultant": 0.14682675898075104,
+      "mean_cos_mean_resultant": 0.12929171323776245,
+      "std_cos": 0.1749570518732071,
+      "significant_rank": 56,
+      "significant_rank_ratio": 0.7,
+      "reconstruction_ratio": 1.1756483316421509,
+      "group_input_dim": 80
+    },
+    "features.4.1.block.1.0": {
+      "shape": [
+        480,
+        9
+      ],
+      "rank1_energy": 0.5981160402297974,
+      "mean_cos_svd_resultant": 0.7133592963218689,
+      "mean_cos_mean_resultant": 0.4322056174278259,
+      "std_cos": 0.2860439121723175,
+      "significant_rank": 5,
+      "significant_rank_ratio": 0.5555555555555556,
+      "reconstruction_ratio": 1.078076720237732,
+      "group_input_dim": 9
+    },
+    "features.4.1.block.2.fc1": {
+      "shape": [
+        20,
+        480
+      ],
+      "rank1_energy": 0.21227476000785828,
+      "mean_cos_svd_resultant": 0.20368202030658722,
+      "mean_cos_mean_resultant": 0.19639787077903748,
+      "std_cos": 0.21484267711639404,
+      "significant_rank": 16,
+      "significant_rank_ratio": 0.8,
+      "reconstruction_ratio": 2.5121071338653564,
+      "group_input_dim": 480
+    },
+    "features.4.1.block.2.fc2": {
+      "shape": [
+        480,
+        20
+      ],
+      "rank1_energy": 0.15447449684143066,
+      "mean_cos_svd_resultant": 0.14077183604240417,
+      "mean_cos_mean_resultant": 0.29478129744529724,
+      "std_cos": 0.17813809216022491,
+      "significant_rank": 16,
+      "significant_rank_ratio": 0.8,
+      "reconstruction_ratio": 1.1661906242370605,
+      "group_input_dim": 20
+    },
+    "features.4.1.block.3.0": {
+      "shape": [
+        80,
+        480
+      ],
+      "rank1_energy": 0.04518876597285271,
+      "mean_cos_svd_resultant": 0.14406068623065948,
+      "mean_cos_mean_resultant": 0.11119435727596283,
+      "std_cos": 0.12915360927581787,
+      "significant_rank": 58,
+      "significant_rank_ratio": 0.725,
+      "reconstruction_ratio": 2.585367202758789,
+      "group_input_dim": 480
+    },
+    "features.4.2.block.0.0": {
+      "shape": [
+        480,
+        80
+      ],
+      "rank1_energy": 0.04688908904790878,
+      "mean_cos_svd_resultant": 0.17708547413349152,
+      "mean_cos_mean_resultant": 0.12832646071910858,
+      "std_cos": 0.1425720900297165,
+      "significant_rank": 58,
+      "significant_rank_ratio": 0.725,
+      "reconstruction_ratio": 1.1682766675949097,
+      "group_input_dim": 80
+    },
+    "features.4.2.block.1.0": {
+      "shape": [
+        480,
+        9
+      ],
+      "rank1_energy": 0.5709093809127808,
+      "mean_cos_svd_resultant": 0.6835009455680847,
+      "mean_cos_mean_resultant": 0.4693646728992462,
+      "std_cos": 0.2949398159980774,
+      "significant_rank": 5,
+      "significant_rank_ratio": 0.5555555555555556,
+      "reconstruction_ratio": 1.0394796133041382,
+      "group_input_dim": 9
+    },
+    "features.4.2.block.2.fc1": {
+      "shape": [
+        20,
+        480
+      ],
+      "rank1_energy": 0.20872308313846588,
+      "mean_cos_svd_resultant": 0.08346302807331085,
+      "mean_cos_mean_resultant": 0.18705758452415466,
+      "std_cos": 0.2178550660610199,
+      "significant_rank": 16,
+      "significant_rank_ratio": 0.8,
+      "reconstruction_ratio": 2.474883794784546,
+      "group_input_dim": 480
+    },
+    "features.4.2.block.2.fc2": {
+      "shape": [
+        480,
+        20
+      ],
+      "rank1_energy": 0.1480007916688919,
+      "mean_cos_svd_resultant": 0.1869187355041504,
+      "mean_cos_mean_resultant": 0.3078935444355011,
+      "std_cos": 0.18613362312316895,
+      "significant_rank": 16,
+      "significant_rank_ratio": 0.8,
+      "reconstruction_ratio": 1.1034125089645386,
+      "group_input_dim": 20
+    },
+    "features.4.2.block.3.0": {
+      "shape": [
+        80,
+        480
+      ],
+      "rank1_energy": 0.04003649204969406,
+      "mean_cos_svd_resultant": 0.13895949721336365,
+      "mean_cos_mean_resultant": 0.10779507458209991,
+      "std_cos": 0.11943477392196655,
+      "significant_rank": 59,
+      "significant_rank_ratio": 0.7375,
+      "reconstruction_ratio": 2.6003925800323486,
+      "group_input_dim": 480
+    },
+    "features.5.0.block.0.0": {
+      "shape": [
+        480,
+        80
+      ],
+      "rank1_energy": 0.04973921179771423,
+      "mean_cos_svd_resultant": 0.17797155678272247,
+      "mean_cos_mean_resultant": 0.16478392481803894,
+      "std_cos": 0.14019231498241425,
+      "significant_rank": 61,
+      "significant_rank_ratio": 0.7625,
+      "reconstruction_ratio": 1.2336708307266235,
+      "group_input_dim": 80
+    },
+    "features.5.0.block.1.0": {
+      "shape": [
+        480,
+        25
+      ],
+      "rank1_energy": 0.6652058362960815,
+      "mean_cos_svd_resultant": 0.7112271785736084,
+      "mean_cos_mean_resultant": 0.4512561857700348,
+      "std_cos": 0.31985247135162354,
+      "significant_rank": 5,
+      "significant_rank_ratio": 0.2,
+      "reconstruction_ratio": 1.287028431892395,
+      "group_input_dim": 25
+    },
+    "features.5.0.block.2.fc1": {
+      "shape": [
+        20,
+        480
+      ],
+      "rank1_energy": 0.09736686199903488,
+      "mean_cos_svd_resultant": 0.21239519119262695,
+      "mean_cos_mean_resultant": 0.2532385587692261,
+      "std_cos": 0.19035792350769043,
+      "significant_rank": 16,
+      "significant_rank_ratio": 0.8,
+      "reconstruction_ratio": 2.2910828590393066,
+      "group_input_dim": 480
+    },
+    "features.5.0.block.2.fc2": {
+      "shape": [
+        480,
+        20
+      ],
+      "rank1_energy": 0.11801666021347046,
+      "mean_cos_svd_resultant": 0.2747516930103302,
+      "mean_cos_mean_resultant": 0.2688727378845215,
+      "std_cos": 0.18158918619155884,
+      "significant_rank": 16,
+      "significant_rank_ratio": 0.8,
+      "reconstruction_ratio": 1.2259345054626465,
+      "group_input_dim": 20
+    },
+    "features.5.0.block.3.0": {
+      "shape": [
+        112,
+        480
+      ],
+      "rank1_energy": 0.024822644889354706,
+      "mean_cos_svd_resultant": 0.11915697902441025,
+      "mean_cos_mean_resultant": 0.08979678153991699,
+      "std_cos": 0.10129807889461517,
+      "significant_rank": 87,
+      "significant_rank_ratio": 0.7767857142857143,
+      "reconstruction_ratio": 2.550011157989502,
+      "group_input_dim": 480
+    },
+    "features.5.1.block.0.0": {
+      "shape": [
+        672,
+        112
+      ],
+      "rank1_energy": 0.034078650176525116,
+      "mean_cos_svd_resultant": 0.1391858011484146,
+      "mean_cos_mean_resultant": 0.13322857022285461,
+      "std_cos": 0.11510498821735382,
+      "significant_rank": 83,
+      "significant_rank_ratio": 0.7410714285714286,
+      "reconstruction_ratio": 1.1285721063613892,
+      "group_input_dim": 112
+    },
+    "features.5.1.block.1.0": {
+      "shape": [
+        672,
+        25
+      ],
+      "rank1_energy": 0.46000441908836365,
+      "mean_cos_svd_resultant": 0.6109350919723511,
+      "mean_cos_mean_resultant": 0.5772828459739685,
+      "std_cos": 0.3201965391635895,
+      "significant_rank": 7,
+      "significant_rank_ratio": 0.28,
+      "reconstruction_ratio": 1.091939926147461,
+      "group_input_dim": 25
+    },
+    "features.5.1.block.2.fc1": {
+      "shape": [
+        28,
+        672
+      ],
+      "rank1_energy": 0.08767528831958771,
+      "mean_cos_svd_resultant": 0.17983675003051758,
+      "mean_cos_mean_resultant": 0.1600882112979889,
+      "std_cos": 0.18144944310188293,
+      "significant_rank": 23,
+      "significant_rank_ratio": 0.8214285714285714,
+      "reconstruction_ratio": 2.4139976501464844,
+      "group_input_dim": 672
+    },
+    "features.5.1.block.2.fc2": {
+      "shape": [
+        672,
+        28
+      ],
+      "rank1_energy": 0.10912374407052994,
+      "mean_cos_svd_resultant": 0.3208560347557068,
+      "mean_cos_mean_resultant": 0.3137219548225403,
+      "std_cos": 0.21559852361679077,
+      "significant_rank": 23,
+      "significant_rank_ratio": 0.8214285714285714,
+      "reconstruction_ratio": 1.1209174394607544,
+      "group_input_dim": 28
+    },
+    "features.5.1.block.3.0": {
+      "shape": [
+        112,
+        672
+      ],
+      "rank1_energy": 0.04754643142223358,
+      "mean_cos_svd_resultant": 0.12374678999185562,
+      "mean_cos_mean_resultant": 0.09775569289922714,
+      "std_cos": 0.1272886097431183,
+      "significant_rank": 83,
+      "significant_rank_ratio": 0.7410714285714286,
+      "reconstruction_ratio": 2.4586222171783447,
+      "group_input_dim": 672
+    },
+    "features.5.2.block.0.0": {
+      "shape": [
+        672,
+        112
+      ],
+      "rank1_energy": 0.04839162528514862,
+      "mean_cos_svd_resultant": 0.15586932003498077,
+      "mean_cos_mean_resultant": 0.1427917331457138,
+      "std_cos": 0.15550130605697632,
+      "significant_rank": 79,
+      "significant_rank_ratio": 0.7053571428571429,
+      "reconstruction_ratio": 1.1833088397979736,
+      "group_input_dim": 112
+    },
+    "features.5.2.block.1.0": {
+      "shape": [
+        672,
+        25
+      ],
+      "rank1_energy": 0.4421525299549103,
+      "mean_cos_svd_resultant": 0.5700795650482178,
+      "mean_cos_mean_resultant": 0.5624357461929321,
+      "std_cos": 0.3157810866832733,
+      "significant_rank": 7,
+      "significant_rank_ratio": 0.28,
+      "reconstruction_ratio": 1.0799027681350708,
+      "group_input_dim": 25
+    },
+    "features.5.2.block.2.fc1": {
+      "shape": [
+        28,
+        672
+      ],
+      "rank1_energy": 0.10886386036872864,
+      "mean_cos_svd_resultant": 0.24299947917461395,
+      "mean_cos_mean_resultant": 0.1773538738489151,
+      "std_cos": 0.19059383869171143,
+      "significant_rank": 23,
+      "significant_rank_ratio": 0.8214285714285714,
+      "reconstruction_ratio": 2.3389198780059814,
+      "group_input_dim": 672
+    },
+    "features.5.2.block.2.fc2": {
+      "shape": [
+        672,
+        28
+      ],
+      "rank1_energy": 0.12997785210609436,
+      "mean_cos_svd_resultant": 0.31933334469795227,
+      "mean_cos_mean_resultant": 0.3439842164516449,
+      "std_cos": 0.2109145224094391,
+      "significant_rank": 23,
+      "significant_rank_ratio": 0.8214285714285714,
+      "reconstruction_ratio": 1.090136170387268,
+      "group_input_dim": 28
+    },
+    "features.5.2.block.3.0": {
+      "shape": [
+        112,
+        672
+      ],
+      "rank1_energy": 0.04418579116463661,
+      "mean_cos_svd_resultant": 0.10428678244352341,
+      "mean_cos_mean_resultant": 0.0952872782945633,
+      "std_cos": 0.12553457915782928,
+      "significant_rank": 81,
+      "significant_rank_ratio": 0.7232142857142857,
+      "reconstruction_ratio": 2.461876392364502,
+      "group_input_dim": 672
+    },
+    "features.6.0.block.0.0": {
+      "shape": [
+        672,
+        112
+      ],
+      "rank1_energy": 0.045842695981264114,
+      "mean_cos_svd_resultant": 0.17907331883907318,
+      "mean_cos_mean_resultant": 0.18190549314022064,
+      "std_cos": 0.11504139006137848,
+      "significant_rank": 83,
+      "significant_rank_ratio": 0.7410714285714286,
+      "reconstruction_ratio": 1.2050199508666992,
+      "group_input_dim": 112
+    },
+    "features.6.0.block.1.0": {
+      "shape": [
+        672,
+        25
+      ],
+      "rank1_energy": 0.8585575222969055,
+      "mean_cos_svd_resultant": 0.9133570790290833,
+      "mean_cos_mean_resultant": 0.835597813129425,
+      "std_cos": 0.19161967933177948,
+      "significant_rank": 2,
+      "significant_rank_ratio": 0.08,
+      "reconstruction_ratio": 1.7092093229293823,
+      "group_input_dim": 25
+    },
+    "features.6.0.block.2.fc1": {
+      "shape": [
+        28,
+        672
+      ],
+      "rank1_energy": 0.3424072265625,
+      "mean_cos_svd_resultant": 0.2642197012901306,
+      "mean_cos_mean_resultant": 0.4094325006008148,
+      "std_cos": 0.2163405418395996,
+      "significant_rank": 5,
+      "significant_rank_ratio": 0.17857142857142858,
+      "reconstruction_ratio": 1.3965275287628174,
+      "group_input_dim": 672
+    },
+    "features.6.0.block.2.fc2": {
+      "shape": [
+        672,
+        28
+      ],
+      "rank1_energy": 0.28207075595855713,
+      "mean_cos_svd_resultant": 0.4027235507965088,
+      "mean_cos_mean_resultant": 0.4747781753540039,
+      "std_cos": 0.24818480014801025,
+      "significant_rank": 5,
+      "significant_rank_ratio": 0.17857142857142858,
+      "reconstruction_ratio": 1.3014742136001587,
+      "group_input_dim": 28
+    },
+    "features.6.0.block.3.0": {
+      "shape": [
+        192,
+        672
+      ],
+      "rank1_energy": 0.011636441573500633,
+      "mean_cos_svd_resultant": 0.08561786264181137,
+      "mean_cos_mean_resultant": 0.07309260219335556,
+      "std_cos": 0.06450176984071732,
+      "significant_rank": 155,
+      "significant_rank_ratio": 0.8072916666666666,
+      "reconstruction_ratio": 2.453366756439209,
+      "group_input_dim": 672
+    },
+    "features.6.1.block.0.0": {
+      "shape": [
+        1152,
+        192
+      ],
+      "rank1_energy": 0.028679024428129196,
+      "mean_cos_svd_resultant": 0.13075558841228485,
+      "mean_cos_mean_resultant": 0.12648533284664154,
+      "std_cos": 0.09432243555784225,
+      "significant_rank": 148,
+      "significant_rank_ratio": 0.7708333333333334,
+      "reconstruction_ratio": 1.1693342924118042,
+      "group_input_dim": 192
+    },
+    "features.6.1.block.1.0": {
+      "shape": [
+        1152,
+        25
+      ],
+      "rank1_energy": 0.47885948419570923,
+      "mean_cos_svd_resultant": 0.6347296237945557,
+      "mean_cos_mean_resultant": 0.6197922229766846,
+      "std_cos": 0.29972878098487854,
+      "significant_rank": 7,
+      "significant_rank_ratio": 0.28,
+      "reconstruction_ratio": 1.1251839399337769,
+      "group_input_dim": 25
+    },
+    "features.6.1.block.2.fc1": {
+      "shape": [
+        48,
+        1152
+      ],
+      "rank1_energy": 0.05700922757387161,
+      "mean_cos_svd_resultant": 0.1671976000070572,
+      "mean_cos_mean_resultant": 0.11853980273008347,
+      "std_cos": 0.15221291780471802,
+      "significant_rank": 39,
+      "significant_rank_ratio": 0.8125,
+      "reconstruction_ratio": 2.504162073135376,
+      "group_input_dim": 1152
+    },
+    "features.6.1.block.2.fc2": {
+      "shape": [
+        1152,
+        48
+      ],
+      "rank1_energy": 0.08542630821466446,
+      "mean_cos_svd_resultant": 0.2589457333087921,
+      "mean_cos_mean_resultant": 0.26119670271873474,
+      "std_cos": 0.13115347921848297,
+      "significant_rank": 40,
+      "significant_rank_ratio": 0.8333333333333334,
+      "reconstruction_ratio": 1.136403203010559,
+      "group_input_dim": 48
+    },
+    "features.6.1.block.3.0": {
+      "shape": [
+        192,
+        1152
+      ],
+      "rank1_energy": 0.024788441136479378,
+      "mean_cos_svd_resultant": 0.08757451921701431,
+      "mean_cos_mean_resultant": 0.07267282158136368,
+      "std_cos": 0.09915559738874435,
+      "significant_rank": 149,
+      "significant_rank_ratio": 0.7760416666666666,
+      "reconstruction_ratio": 2.742438793182373,
+      "group_input_dim": 1152
+    },
+    "features.6.2.block.0.0": {
+      "shape": [
+        1152,
+        192
+      ],
+      "rank1_energy": 0.032541681081056595,
+      "mean_cos_svd_resultant": 0.14477217197418213,
+      "mean_cos_mean_resultant": 0.14118076860904694,
+      "std_cos": 0.09510922431945801,
+      "significant_rank": 146,
+      "significant_rank_ratio": 0.7604166666666666,
+      "reconstruction_ratio": 1.1536405086517334,
+      "group_input_dim": 192
+    },
+    "features.6.2.block.1.0": {
+      "shape": [
+        1152,
+        25
+      ],
+      "rank1_energy": 0.4637305736541748,
+      "mean_cos_svd_resultant": 0.6246576905250549,
+      "mean_cos_mean_resultant": 0.6352011561393738,
+      "std_cos": 0.2958352565765381,
+      "significant_rank": 7,
+      "significant_rank_ratio": 0.28,
+      "reconstruction_ratio": 1.1005603075027466,
+      "group_input_dim": 25
+    },
+    "features.6.2.block.2.fc1": {
+      "shape": [
+        48,
+        1152
+      ],
+      "rank1_energy": 0.04646231606602669,
+      "mean_cos_svd_resultant": 0.14773106575012207,
+      "mean_cos_mean_resultant": 0.12505371868610382,
+      "std_cos": 0.14408695697784424,
+      "significant_rank": 40,
+      "significant_rank_ratio": 0.8333333333333334,
+      "reconstruction_ratio": 2.5870721340179443,
+      "group_input_dim": 1152
+    },
+    "features.6.2.block.2.fc2": {
+      "shape": [
+        1152,
+        48
+      ],
+      "rank1_energy": 0.09874031692743301,
+      "mean_cos_svd_resultant": 0.28766781091690063,
+      "mean_cos_mean_resultant": 0.2914723753929138,
+      "std_cos": 0.13111786544322968,
+      "significant_rank": 39,
+      "significant_rank_ratio": 0.8125,
+      "reconstruction_ratio": 1.1621625423431396,
+      "group_input_dim": 48
+    },
+    "features.6.2.block.3.0": {
+      "shape": [
+        192,
+        1152
+      ],
+      "rank1_energy": 0.027277734130620956,
+      "mean_cos_svd_resultant": 0.08797439187765121,
+      "mean_cos_mean_resultant": 0.07102163881063461,
+      "std_cos": 0.10318916290998459,
+      "significant_rank": 149,
+      "significant_rank_ratio": 0.7760416666666666,
+      "reconstruction_ratio": 2.748579740524292,
+      "group_input_dim": 1152
+    },
+    "features.6.3.block.0.0": {
+      "shape": [
+        1152,
+        192
+      ],
+      "rank1_energy": 0.033404186367988586,
+      "mean_cos_svd_resultant": 0.14822660386562347,
+      "mean_cos_mean_resultant": 0.1497592329978943,
+      "std_cos": 0.09509934484958649,
+      "significant_rank": 147,
+      "significant_rank_ratio": 0.765625,
+      "reconstruction_ratio": 1.1598278284072876,
+      "group_input_dim": 192
+    },
+    "features.6.3.block.1.0": {
+      "shape": [
+        1152,
+        25
+      ],
+      "rank1_energy": 0.4888722598552704,
+      "mean_cos_svd_resultant": 0.6586676836013794,
+      "mean_cos_mean_resultant": 0.6736428737640381,
+      "std_cos": 0.2740834653377533,
+      "significant_rank": 8,
+      "significant_rank_ratio": 0.32,
+      "reconstruction_ratio": 1.1237006187438965,
+      "group_input_dim": 25
+    },
+    "features.6.3.block.2.fc1": {
+      "shape": [
+        48,
+        1152
+      ],
+      "rank1_energy": 0.044463079422712326,
+      "mean_cos_svd_resultant": 0.1559790074825287,
+      "mean_cos_mean_resultant": 0.12157169729471207,
+      "std_cos": 0.1308409422636032,
+      "significant_rank": 41,
+      "significant_rank_ratio": 0.8541666666666666,
+      "reconstruction_ratio": 2.7418766021728516,
+      "group_input_dim": 1152
+    },
+    "features.6.3.block.2.fc2": {
+      "shape": [
+        1152,
+        48
+      ],
+      "rank1_energy": 0.1243494302034378,
+      "mean_cos_svd_resultant": 0.3256514370441437,
+      "mean_cos_mean_resultant": 0.3283776640892029,
+      "std_cos": 0.13529761135578156,
+      "significant_rank": 40,
+      "significant_rank_ratio": 0.8333333333333334,
+      "reconstruction_ratio": 1.1449041366577148,
+      "group_input_dim": 48
+    },
+    "features.6.3.block.3.0": {
+      "shape": [
+        192,
+        1152
+      ],
+      "rank1_energy": 0.025242958217859268,
+      "mean_cos_svd_resultant": 0.0860787108540535,
+      "mean_cos_mean_resultant": 0.07406396418809891,
+      "std_cos": 0.09844279289245605,
+      "significant_rank": 150,
+      "significant_rank_ratio": 0.78125,
+      "reconstruction_ratio": 2.765559196472168,
+      "group_input_dim": 1152
+    },
+    "features.7.0.block.0.0": {
+      "shape": [
+        1152,
+        192
+      ],
+      "rank1_energy": 0.0334448367357254,
+      "mean_cos_svd_resultant": 0.15207642316818237,
+      "mean_cos_mean_resultant": 0.11174946278333664,
+      "std_cos": 0.09314941614866257,
+      "significant_rank": 152,
+      "significant_rank_ratio": 0.7916666666666666,
+      "reconstruction_ratio": 1.2125403881072998,
+      "group_input_dim": 192
+    },
+    "features.7.0.block.1.0": {
+      "shape": [
+        1152,
+        9
+      ],
+      "rank1_energy": 0.8986954689025879,
+      "mean_cos_svd_resultant": 0.9542575478553772,
+      "mean_cos_mean_resultant": 0.9082762598991394,
+      "std_cos": 0.09607063233852386,
+      "significant_rank": 2,
+      "significant_rank_ratio": 0.2222222222222222,
+      "reconstruction_ratio": 1.297737717628479,
+      "group_input_dim": 9
+    },
+    "features.7.0.block.2.fc1": {
+      "shape": [
+        48,
+        1152
+      ],
+      "rank1_energy": 0.03775952756404877,
+      "mean_cos_svd_resultant": 0.12266122549772263,
+      "mean_cos_mean_resultant": 0.12122449278831482,
+      "std_cos": 0.13437773287296295,
+      "significant_rank": 39,
+      "significant_rank_ratio": 0.8125,
+      "reconstruction_ratio": 2.562680244445801,
+      "group_input_dim": 1152
+    },
+    "features.7.0.block.2.fc2": {
+      "shape": [
+        1152,
+        48
+      ],
+      "rank1_energy": 0.17632628977298737,
+      "mean_cos_svd_resultant": 0.396018922328949,
+      "mean_cos_mean_resultant": 0.39721938967704773,
+      "std_cos": 0.17421837151050568,
+      "significant_rank": 37,
+      "significant_rank_ratio": 0.7708333333333334,
+      "reconstruction_ratio": 1.1794010400772095,
+      "group_input_dim": 48
+    },
+    "features.7.0.block.3.0": {
+      "shape": [
+        320,
+        1152
+      ],
+      "rank1_energy": 0.019037023186683655,
+      "mean_cos_svd_resultant": 0.0981450229883194,
+      "mean_cos_mean_resultant": 0.056119076907634735,
+      "std_cos": 0.1027270033955574,
+      "significant_rank": 263,
+      "significant_rank_ratio": 0.821875,
+      "reconstruction_ratio": 2.5983595848083496,
+      "group_input_dim": 1152
+    },
+    "features.8.0": {
+      "shape": [
+        1280,
+        320
+      ],
+      "rank1_energy": 0.012276748195290565,
+      "mean_cos_svd_resultant": 0.10605734586715698,
+      "mean_cos_mean_resultant": 0.10780379921197891,
+      "std_cos": 0.03343219682574272,
+      "significant_rank": 266,
+      "significant_rank_ratio": 0.83125
+    },
+    "classifier.1": {
+      "shape": [
+        1000,
+        1280
+      ],
+      "rank1_energy": 0.009867971763014793,
+      "mean_cos_svd_resultant": 0.0839596763253212,
+      "mean_cos_mean_resultant": 0.012044326402246952,
+      "std_cos": 0.050546057522296906,
+      "significant_rank": 540,
+      "significant_rank_ratio": 0.54
+    }
+  },
+  "nesting_angles_deg": [
+    {
+      "layer_a": "features.3.0.block.1.0",
+      "layer_b": "features.3.1.block.1.0",
+      "mean_angle_deg": 44.37017059326172
+    },
+    {
+      "layer_a": "features.3.0.block.1.0",
+      "layer_b": "features.5.0.block.1.0",
+      "mean_angle_deg": 41.222808837890625
+    },
+    {
+      "layer_a": "features.3.0.block.1.0",
+      "layer_b": "features.5.1.block.1.0",
+      "mean_angle_deg": 31.33587074279785
+    },
+    {
+      "layer_a": "features.3.0.block.1.0",
+      "layer_b": "features.5.2.block.1.0",
+      "mean_angle_deg": 31.166067123413086
+    },
+    {
+      "layer_a": "features.3.0.block.1.0",
+      "layer_b": "features.6.0.block.1.0",
+      "mean_angle_deg": 16.662633895874023
+    },
+    {
+      "layer_a": "features.3.0.block.1.0",
+      "layer_b": "features.6.1.block.1.0",
+      "mean_angle_deg": 31.663774490356445
+    },
+    {
+      "layer_a": "features.3.0.block.1.0",
+      "layer_b": "features.6.2.block.1.0",
+      "mean_angle_deg": 31.2199649810791
+    },
+    {
+      "layer_a": "features.3.0.block.1.0",
+      "layer_b": "features.6.3.block.1.0",
+      "mean_angle_deg": 31.85959243774414
+    },
+    {
+      "layer_a": "features.3.1.block.1.0",
+      "layer_b": "features.5.0.block.1.0",
+      "mean_angle_deg": 11.18528938293457
+    },
+    {
+      "layer_a": "features.3.1.block.1.0",
+      "layer_b": "features.5.1.block.1.0",
+      "mean_angle_deg": 15.53458309173584
+    },
+    {
+      "layer_a": "features.3.1.block.1.0",
+      "layer_b": "features.5.2.block.1.0",
+      "mean_angle_deg": 16.21072769165039
+    },
+    {
+      "layer_a": "features.3.1.block.1.0",
+      "layer_b": "features.6.0.block.1.0",
+      "mean_angle_deg": 42.80126953125
+    },
+    {
+      "layer_a": "features.3.1.block.1.0",
+      "layer_b": "features.6.1.block.1.0",
+      "mean_angle_deg": 18.584768295288086
+    },
+    {
+      "layer_a": "features.3.1.block.1.0",
+      "layer_b": "features.6.2.block.1.0",
+      "mean_angle_deg": 19.951948165893555
+    },
+    {
+      "layer_a": "features.3.1.block.1.0",
+      "layer_b": "features.6.3.block.1.0",
+      "mean_angle_deg": 17.6359920501709
+    },
+    {
+      "layer_a": "features.5.0.block.1.0",
+      "layer_b": "features.5.1.block.1.0",
+      "mean_angle_deg": 7.435916900634766
+    },
+    {
+      "layer_a": "features.5.0.block.1.0",
+      "layer_b": "features.5.2.block.1.0",
+      "mean_angle_deg": 8.043604850769043
+    },
+    {
+      "layer_a": "features.5.0.block.1.0",
+      "layer_b": "features.6.0.block.1.0",
+      "mean_angle_deg": 32.43061828613281
+    },
+    {
+      "layer_a": "features.5.0.block.1.0",
+      "layer_b": "features.6.1.block.1.0",
+      "mean_angle_deg": 12.142417907714844
+    },
+    {
+      "layer_a": "features.5.0.block.1.0",
+      "layer_b": "features.6.2.block.1.0",
+      "mean_angle_deg": 14.323509216308594
+    },
+    {
+      "layer_a": "features.5.0.block.1.0",
+      "layer_b": "features.6.3.block.1.0",
+      "mean_angle_deg": 13.790334701538086
+    },
+    {
+      "layer_a": "features.5.1.block.1.0",
+      "layer_b": "features.5.2.block.1.0",
+      "mean_angle_deg": 6.282712459564209
+    },
+    {
+      "layer_a": "features.5.1.block.1.0",
+      "layer_b": "features.6.0.block.1.0",
+      "mean_angle_deg": 23.57592010498047
+    },
+    {
+      "layer_a": "features.5.1.block.1.0",
+      "layer_b": "features.6.1.block.1.0",
+      "mean_angle_deg": 14.843168258666992
+    },
+    {
+      "layer_a": "features.5.1.block.1.0",
+      "layer_b": "features.6.2.block.1.0",
+      "mean_angle_deg": 16.712419509887695
+    },
+    {
+      "layer_a": "features.5.1.block.1.0",
+      "layer_b": "features.6.3.block.1.0",
+      "mean_angle_deg": 14.834914207458496
+    },
+    {
+      "layer_a": "features.5.2.block.1.0",
+      "layer_b": "features.6.0.block.1.0",
+      "mean_angle_deg": 24.486438751220703
+    },
+    {
+      "layer_a": "features.5.2.block.1.0",
+      "layer_b": "features.6.1.block.1.0",
+      "mean_angle_deg": 15.942200660705566
+    },
+    {
+      "layer_a": "features.5.2.block.1.0",
+      "layer_b": "features.6.2.block.1.0",
+      "mean_angle_deg": 18.8635196685791
+    },
+    {
+      "layer_a": "features.5.2.block.1.0",
+      "layer_b": "features.6.3.block.1.0",
+      "mean_angle_deg": 14.906105995178223
+    },
+    {
+      "layer_a": "features.6.0.block.1.0",
+      "layer_b": "features.6.1.block.1.0",
+      "mean_angle_deg": 26.797019958496094
+    },
+    {
+      "layer_a": "features.6.0.block.1.0",
+      "layer_b": "features.6.2.block.1.0",
+      "mean_angle_deg": 25.698936462402344
+    },
+    {
+      "layer_a": "features.6.0.block.1.0",
+      "layer_b": "features.6.3.block.1.0",
+      "mean_angle_deg": 24.386192321777344
+    },
+    {
+      "layer_a": "features.6.1.block.1.0",
+      "layer_b": "features.6.2.block.1.0",
+      "mean_angle_deg": 9.87038516998291
+    },
+    {
+      "layer_a": "features.6.1.block.1.0",
+      "layer_b": "features.6.3.block.1.0",
+      "mean_angle_deg": 8.168672561645508
+    },
+    {
+      "layer_a": "features.6.2.block.1.0",
+      "layer_b": "features.6.3.block.1.0",
+      "mean_angle_deg": 6.997995853424072
+    }
+  ]
+}

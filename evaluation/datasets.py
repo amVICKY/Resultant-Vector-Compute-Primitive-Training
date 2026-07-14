@@ -95,7 +95,7 @@ def voc_loader(
             img, mask = super().__getitem__(index)  # PIL image, PIL 'P' mask
             img = TF.resize(img, [eval_size, eval_size], interpolation=TF.InterpolationMode.BILINEAR)
             mask = TF.resize(mask, [eval_size, eval_size], interpolation=TF.InterpolationMode.NEAREST)
-            img = TF.normalize(TF.to_tensor(img), mean, std)
+            img = TF.normalize(TF.to_tensor(img), mean, std) # type:ignore
             # VOC masks: 0..20 = classes, 255 = void/ignore (handled downstream).
             mask = torch.as_tensor(np.array(mask), dtype=torch.long)
             return img, mask

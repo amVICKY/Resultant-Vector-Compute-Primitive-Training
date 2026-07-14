@@ -1,0 +1,40 @@
+19:54:51 | INFO    | [1/5] Loading resnet18 (pretrained)...
+19:54:52 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+19:54:54 | INFO    |       21 weight matrices extracted
+19:54:54 | INFO    | [3/5] Grouping layers by input dimension...
+19:54:54 | INFO    |       4 shareable groups (input-dim shared by >1 layer)
+19:54:54 | INFO    |       d=576  : 5 layers  -> ['layer1.0.conv1', 'layer1.0.conv2', 'layer1.1.conv1', 'layer1.1.conv2', 'layer2.0.conv1']
+19:54:54 | INFO    |       d=1152 : 4 layers  -> ['layer2.0.conv2', 'layer2.1.conv1', 'layer2.1.conv2', 'layer3.0.conv1']
+19:54:54 | INFO    |       d=2304 : 4 layers  -> ['layer3.0.conv2', 'layer3.1.conv1', 'layer3.1.conv2', 'layer4.0.conv1']
+19:54:54 | INFO    |       d=4608 : 3 layers  -> ['layer4.0.conv2', 'layer4.1.conv1', 'layer4.1.conv2']
+19:54:54 | INFO    | [4/5] Building global basis per group and measuring ratios...
+19:54:54 | INFO    |   Group d=576:
+19:54:54 | INFO    |     FAIL layer1.0.conv1                         k_l=  33  ratio=2.0098
+19:54:54 | INFO    |     FAIL layer1.0.conv2                         k_l=  39  ratio=2.2462
+19:54:54 | INFO    |     FAIL layer1.1.conv1                         k_l=  40  ratio=2.0340
+19:54:54 | INFO    |     FAIL layer1.1.conv2                         k_l=  42  ratio=2.3233
+19:54:54 | INFO    |     FAIL layer2.0.conv1                         k_l=  77  ratio=2.1990
+19:54:54 | INFO    |   Group d=1152:
+19:54:54 | INFO    |     FAIL layer2.0.conv2                         k_l=  83  ratio=2.1279
+19:54:54 | INFO    |     FAIL layer2.1.conv1                         k_l=  89  ratio=2.1343
+19:54:55 | INFO    |     FAIL layer2.1.conv2                         k_l=  86  ratio=2.1362
+19:54:55 | INFO    |     FAIL layer3.0.conv1                         k_l= 136  ratio=1.9660
+19:54:55 | INFO    |   Group d=2304:
+19:54:57 | INFO    |     FAIL layer3.0.conv2                         k_l= 171  ratio=2.0685
+19:54:57 | INFO    |     FAIL layer3.1.conv1                         k_l= 176  ratio=2.0593
+19:54:57 | INFO    |     FAIL layer3.1.conv2                         k_l= 165  ratio=2.0566
+19:54:57 | INFO    |     FAIL layer4.0.conv1                         k_l= 290  ratio=1.9138
+19:54:57 | INFO    |   Group d=4608:
+19:55:03 | INFO    |     FAIL layer4.0.conv2                         k_l= 361  ratio=1.9806
+19:55:04 | INFO    |     FAIL layer4.1.conv1                         k_l= 349  ratio=1.9174
+19:55:04 | INFO    |     FAIL layer4.1.conv2                         k_l= 245  ratio=1.7664
+19:55:05 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+19:55:05 | INFO    | =================================================================
+19:55:05 | INFO    |   PHASE 2 VERDICT — resnet18
+19:55:05 | INFO    | =================================================================
+19:55:05 | INFO    |   Mean reconstruction ratio : 2.0587
+19:55:05 | INFO    |   Max reconstruction ratio  : 2.3233
+19:55:05 | INFO    |   Layers well-served (< 1.15): 0 / 16
+19:55:05 | INFO    |   Mean nesting angle (deg)  : 66.4
+19:55:05 | INFO    |   -> SHARED BASIS INSUFFICIENT (layers too diverse for one basis)
+19:55:05 | INFO    | =================================================================

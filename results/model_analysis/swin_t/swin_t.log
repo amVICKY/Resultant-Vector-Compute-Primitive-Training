@@ -1,0 +1,80 @@
+20:06:45 | INFO    | [1/5] Loading swin_t (pretrained)...
+20:07:08 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+20:07:11 | INFO    |       53 weight matrices extracted
+20:07:12 | INFO    | [3/5] Grouping layers by input dimension...
+20:07:12 | INFO    |       6 shareable groups (input-dim shared by >1 layer)
+20:07:12 | INFO    |       d=96   : 6 layers  -> ['features.1.0.attn.qkv', 'features.1.0.attn.proj', 'features.1.0.mlp.0', 'features.1.1.attn.qkv', 'features.1.1.attn.proj', 'features.1.1.mlp.0']
+20:07:12 | INFO    |       d=192  : 6 layers  -> ['features.3.0.attn.qkv', 'features.3.0.attn.proj', 'features.3.0.mlp.0', 'features.3.1.attn.qkv', 'features.3.1.attn.proj', 'features.3.1.mlp.0']
+20:07:12 | INFO    |       d=384  : 21 layers  -> ['features.1.0.mlp.3', 'features.1.1.mlp.3', 'features.2.reduction', 'features.5.0.attn.qkv', 'features.5.0.attn.proj', 'features.5.0.mlp.0', 'features.5.1.attn.qkv', 'features.5.1.attn.proj', 'features.5.1.mlp.0', 'features.5.2.attn.qkv', 'features.5.2.attn.proj', 'features.5.2.mlp.0', 'features.5.3.attn.qkv', 'features.5.3.attn.proj', 'features.5.3.mlp.0', 'features.5.4.attn.qkv', 'features.5.4.attn.proj', 'features.5.4.mlp.0', 'features.5.5.attn.qkv', 'features.5.5.attn.proj', 'features.5.5.mlp.0']
+20:07:12 | INFO    |       d=768  : 10 layers  -> ['features.3.0.mlp.3', 'features.3.1.mlp.3', 'features.4.reduction', 'features.7.0.attn.qkv', 'features.7.0.attn.proj', 'features.7.0.mlp.0', 'features.7.1.attn.qkv', 'features.7.1.attn.proj', 'features.7.1.mlp.0', 'head']
+20:07:12 | INFO    |       d=1536 : 7 layers  -> ['features.5.0.mlp.3', 'features.5.1.mlp.3', 'features.5.2.mlp.3', 'features.5.3.mlp.3', 'features.5.4.mlp.3', 'features.5.5.mlp.3', 'features.6.reduction']
+20:07:12 | INFO    |       d=3072 : 2 layers  -> ['features.7.0.mlp.3', 'features.7.1.mlp.3']
+20:07:12 | INFO    | [4/5] Building global basis per group and measuring ratios...
+20:07:12 | INFO    |   Group d=96:
+20:07:12 | INFO    |     FAIL features.1.0.attn.qkv                  k_l=  23  ratio=1.5084
+20:07:12 | INFO    |     FAIL features.1.0.attn.proj                 k_l=  45  ratio=1.8973
+20:07:12 | INFO    |     FAIL features.1.0.mlp.0                     k_l=  45  ratio=1.6093
+20:07:12 | INFO    |     FAIL features.1.1.attn.qkv                  k_l=  49  ratio=1.5984
+20:07:12 | INFO    |     FAIL features.1.1.attn.proj                 k_l=  49  ratio=1.8190
+20:07:12 | INFO    |     FAIL features.1.1.mlp.0                     k_l=  60  ratio=1.5275
+20:07:12 | INFO    |   Group d=384:
+20:07:13 | INFO    |     FAIL features.1.0.mlp.3                     k_l=  58  ratio=2.6142
+20:07:13 | INFO    |     FAIL features.1.1.mlp.3                     k_l=  53  ratio=2.5315
+20:07:13 | INFO    |     FAIL features.2.reduction                   k_l= 125  ratio=2.3927
+20:07:13 | INFO    |     FAIL features.5.0.attn.qkv                  k_l= 137  ratio=1.9138
+20:07:13 | INFO    |     FAIL features.5.0.attn.proj                 k_l= 171  ratio=2.1778
+20:07:13 | INFO    |     FAIL features.5.0.mlp.0                     k_l= 218  ratio=1.7944
+20:07:13 | INFO    |     FAIL features.5.1.attn.qkv                  k_l= 181  ratio=1.6803
+20:07:13 | INFO    |     FAIL features.5.1.attn.proj                 k_l= 165  ratio=2.1895
+20:07:13 | INFO    |     FAIL features.5.1.mlp.0                     k_l= 245  ratio=1.5636
+20:07:13 | INFO    |     FAIL features.5.2.attn.qkv                  k_l= 202  ratio=1.6437
+20:07:14 | INFO    |     FAIL features.5.2.attn.proj                 k_l= 175  ratio=2.1483
+20:07:14 | INFO    |     FAIL features.5.2.mlp.0                     k_l= 245  ratio=1.5409
+20:07:14 | INFO    |     FAIL features.5.3.attn.qkv                  k_l= 204  ratio=1.5913
+20:07:14 | INFO    |     FAIL features.5.3.attn.proj                 k_l= 175  ratio=2.1212
+20:07:14 | INFO    |     FAIL features.5.3.mlp.0                     k_l= 245  ratio=1.5374
+20:07:14 | INFO    |     FAIL features.5.4.attn.qkv                  k_l= 220  ratio=1.5841
+20:07:14 | INFO    |     FAIL features.5.4.attn.proj                 k_l= 198  ratio=2.0485
+20:07:14 | INFO    |     FAIL features.5.4.mlp.0                     k_l= 241  ratio=1.5909
+20:07:14 | INFO    |     FAIL features.5.5.attn.qkv                  k_l= 219  ratio=1.6232
+20:07:14 | INFO    |     FAIL features.5.5.attn.proj                 k_l= 196  ratio=2.0601
+20:07:14 | INFO    |     FAIL features.5.5.mlp.0                     k_l= 238  ratio=1.6040
+20:07:14 | INFO    |   Group d=192:
+20:07:15 | INFO    |     FAIL features.3.0.attn.qkv                  k_l=  82  ratio=1.5447
+20:07:15 | INFO    |     FAIL features.3.0.attn.proj                 k_l=  93  ratio=1.8228
+20:07:15 | INFO    |     FAIL features.3.0.mlp.0                     k_l= 134  ratio=1.5682
+20:07:15 | INFO    |     FAIL features.3.1.attn.qkv                  k_l= 102  ratio=1.5320
+20:07:15 | INFO    |     FAIL features.3.1.attn.proj                 k_l=  98  ratio=1.7734
+20:07:15 | INFO    |     WARN features.3.1.mlp.0                     k_l= 129  ratio=1.4032
+20:07:15 | INFO    |   Group d=768:
+20:07:18 | INFO    |     FAIL features.3.0.mlp.3                     k_l= 110  ratio=2.2115
+20:07:18 | INFO    |     FAIL features.3.1.mlp.3                     k_l=  94  ratio=2.1363
+20:07:18 | INFO    |     FAIL features.4.reduction                   k_l= 183  ratio=2.2994
+20:07:18 | INFO    |     FAIL features.7.0.attn.qkv                  k_l= 251  ratio=1.8576
+20:07:19 | INFO    |     FAIL features.7.0.attn.proj                 k_l= 394  ratio=1.9435
+20:07:19 | INFO    |     FAIL features.7.0.mlp.0                     k_l= 411  ratio=1.6015
+20:07:19 | INFO    |     FAIL features.7.1.attn.qkv                  k_l= 450  ratio=1.5641
+20:07:20 | INFO    |     FAIL features.7.1.attn.proj                 k_l= 403  ratio=1.8768
+20:07:20 | INFO    |     WARN features.7.1.mlp.0                     k_l= 503  ratio=1.4571
+20:07:20 | INFO    |     FAIL head                                   k_l= 534  ratio=1.6595
+20:07:20 | INFO    |   Group d=1536:
+20:07:22 | INFO    |     FAIL features.5.0.mlp.3                     k_l= 234  ratio=2.2944
+20:07:23 | INFO    |     FAIL features.5.1.mlp.3                     k_l= 244  ratio=2.3189
+20:07:23 | INFO    |     FAIL features.5.2.mlp.3                     k_l= 248  ratio=2.3293
+20:07:23 | INFO    |     FAIL features.5.3.mlp.3                     k_l= 247  ratio=2.3500
+20:07:23 | INFO    |     FAIL features.5.4.mlp.3                     k_l= 244  ratio=2.3619
+20:07:23 | INFO    |     FAIL features.5.5.mlp.3                     k_l= 232  ratio=2.3746
+20:07:24 | INFO    |     FAIL features.6.reduction                   k_l= 298  ratio=2.4795
+20:07:24 | INFO    |   Group d=3072:
+20:07:26 | INFO    |     FAIL features.7.0.mlp.3                     k_l= 527  ratio=1.6912
+20:07:27 | INFO    |     FAIL features.7.1.mlp.3                     k_l= 541  ratio=1.7526
+20:07:27 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+20:08:06 | INFO    | =================================================================
+20:08:06 | INFO    |   PHASE 2 VERDICT — swin_t
+20:08:06 | INFO    | =================================================================
+20:08:06 | INFO    |   Mean reconstruction ratio : 1.8868
+20:08:06 | INFO    |   Max reconstruction ratio  : 2.6142
+20:08:06 | INFO    |   Layers well-served (< 1.15): 0 / 52
+20:08:06 | INFO    |   Mean nesting angle (deg)  : 38.1
+20:08:06 | INFO    |   -> SHARED BASIS INSUFFICIENT (layers too diverse for one basis)
+20:08:06 | INFO    | =================================================================

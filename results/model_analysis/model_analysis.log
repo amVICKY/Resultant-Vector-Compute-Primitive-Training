@@ -1,0 +1,765 @@
+19:54:51 | INFO    | GRH Phase 2 — Cross-Model Shared Basis Test
+19:54:51 | INFO    | Models: resnet18, resnet50, vgg16, densenet121, mobilenet_v3_large, efficientnet_b0, vit_b_16, swin_t
+19:54:51 | INFO    | ======================================================================
+19:54:51 | INFO    | MODEL: resnet18
+19:54:51 | INFO    | ======================================================================
+19:54:51 | INFO    | [1/5] Loading resnet18 (pretrained)...
+19:54:52 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+19:54:54 | INFO    |       21 weight matrices extracted
+19:54:54 | INFO    | [3/5] Grouping layers by input dimension...
+19:54:54 | INFO    |       4 shareable groups (input-dim shared by >1 layer)
+19:54:54 | INFO    |       d=576  : 5 layers  -> ['layer1.0.conv1', 'layer1.0.conv2', 'layer1.1.conv1', 'layer1.1.conv2', 'layer2.0.conv1']
+19:54:54 | INFO    |       d=1152 : 4 layers  -> ['layer2.0.conv2', 'layer2.1.conv1', 'layer2.1.conv2', 'layer3.0.conv1']
+19:54:54 | INFO    |       d=2304 : 4 layers  -> ['layer3.0.conv2', 'layer3.1.conv1', 'layer3.1.conv2', 'layer4.0.conv1']
+19:54:54 | INFO    |       d=4608 : 3 layers  -> ['layer4.0.conv2', 'layer4.1.conv1', 'layer4.1.conv2']
+19:54:54 | INFO    | [4/5] Building global basis per group and measuring ratios...
+19:54:54 | INFO    |   Group d=576:
+19:54:54 | INFO    |     FAIL layer1.0.conv1                         k_l=  33  ratio=2.0098
+19:54:54 | INFO    |     FAIL layer1.0.conv2                         k_l=  39  ratio=2.2462
+19:54:54 | INFO    |     FAIL layer1.1.conv1                         k_l=  40  ratio=2.0340
+19:54:54 | INFO    |     FAIL layer1.1.conv2                         k_l=  42  ratio=2.3233
+19:54:54 | INFO    |     FAIL layer2.0.conv1                         k_l=  77  ratio=2.1990
+19:54:54 | INFO    |   Group d=1152:
+19:54:54 | INFO    |     FAIL layer2.0.conv2                         k_l=  83  ratio=2.1279
+19:54:54 | INFO    |     FAIL layer2.1.conv1                         k_l=  89  ratio=2.1343
+19:54:55 | INFO    |     FAIL layer2.1.conv2                         k_l=  86  ratio=2.1362
+19:54:55 | INFO    |     FAIL layer3.0.conv1                         k_l= 136  ratio=1.9660
+19:54:55 | INFO    |   Group d=2304:
+19:54:57 | INFO    |     FAIL layer3.0.conv2                         k_l= 171  ratio=2.0685
+19:54:57 | INFO    |     FAIL layer3.1.conv1                         k_l= 176  ratio=2.0593
+19:54:57 | INFO    |     FAIL layer3.1.conv2                         k_l= 165  ratio=2.0566
+19:54:57 | INFO    |     FAIL layer4.0.conv1                         k_l= 290  ratio=1.9138
+19:54:57 | INFO    |   Group d=4608:
+19:55:03 | INFO    |     FAIL layer4.0.conv2                         k_l= 361  ratio=1.9806
+19:55:04 | INFO    |     FAIL layer4.1.conv1                         k_l= 349  ratio=1.9174
+19:55:04 | INFO    |     FAIL layer4.1.conv2                         k_l= 245  ratio=1.7664
+19:55:05 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+19:55:05 | INFO    | =================================================================
+19:55:05 | INFO    |   PHASE 2 VERDICT — resnet18
+19:55:05 | INFO    | =================================================================
+19:55:05 | INFO    |   Mean reconstruction ratio : 2.0587
+19:55:05 | INFO    |   Max reconstruction ratio  : 2.3233
+19:55:05 | INFO    |   Layers well-served (< 1.15): 0 / 16
+19:55:05 | INFO    |   Mean nesting angle (deg)  : 66.4
+19:55:05 | INFO    |   -> SHARED BASIS INSUFFICIENT (layers too diverse for one basis)
+19:55:05 | INFO    | =================================================================
+19:55:05 | INFO    | ======================================================================
+19:55:05 | INFO    | MODEL: resnet50
+19:55:05 | INFO    | ======================================================================
+19:55:05 | INFO    | [1/5] Loading resnet50 (pretrained)...
+19:55:23 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+19:55:27 | INFO    |       54 weight matrices extracted
+19:55:27 | INFO    | [3/5] Grouping layers by input dimension...
+19:55:27 | INFO    |       10 shareable groups (input-dim shared by >1 layer)
+19:55:27 | INFO    |       d=64   : 5 layers  -> ['layer1.0.conv1', 'layer1.0.conv3', 'layer1.0.downsample.0', 'layer1.1.conv3', 'layer1.2.conv3']
+19:55:27 | INFO    |       d=128  : 4 layers  -> ['layer2.0.conv3', 'layer2.1.conv3', 'layer2.2.conv3', 'layer2.3.conv3']
+19:55:27 | INFO    |       d=256  : 10 layers  -> ['layer1.1.conv1', 'layer1.2.conv1', 'layer2.0.conv1', 'layer2.0.downsample.0', 'layer3.0.conv3', 'layer3.1.conv3', 'layer3.2.conv3', 'layer3.3.conv3', 'layer3.4.conv3', 'layer3.5.conv3']
+19:55:27 | INFO    |       d=512  : 8 layers  -> ['layer2.1.conv1', 'layer2.2.conv1', 'layer2.3.conv1', 'layer3.0.conv1', 'layer3.0.downsample.0', 'layer4.0.conv3', 'layer4.1.conv3', 'layer4.2.conv3']
+19:55:27 | INFO    |       d=576  : 3 layers  -> ['layer1.0.conv2', 'layer1.1.conv2', 'layer1.2.conv2']
+19:55:27 | INFO    |       d=1024 : 7 layers  -> ['layer3.1.conv1', 'layer3.2.conv1', 'layer3.3.conv1', 'layer3.4.conv1', 'layer3.5.conv1', 'layer4.0.conv1', 'layer4.0.downsample.0']
+19:55:27 | INFO    |       d=1152 : 4 layers  -> ['layer2.0.conv2', 'layer2.1.conv2', 'layer2.2.conv2', 'layer2.3.conv2']
+19:55:27 | INFO    |       d=2048 : 3 layers  -> ['layer4.1.conv1', 'layer4.2.conv1', 'fc']
+19:55:27 | INFO    |       d=2304 : 6 layers  -> ['layer3.0.conv2', 'layer3.1.conv2', 'layer3.2.conv2', 'layer3.3.conv2', 'layer3.4.conv2', 'layer3.5.conv2']
+19:55:27 | INFO    |       d=4608 : 3 layers  -> ['layer4.0.conv2', 'layer4.1.conv2', 'layer4.2.conv2']
+19:55:27 | INFO    | [4/5] Building global basis per group and measuring ratios...
+19:55:27 | INFO    |   Group d=64:
+19:55:27 | INFO    |     FAIL layer1.0.conv1                         k_l=  25  ratio=1.5542
+19:55:27 | INFO    |     FAIL layer1.0.conv3                         k_l=  37  ratio=1.6268
+19:55:27 | INFO    |     WARN layer1.0.downsample.0                  k_l=  36  ratio=1.4749
+19:55:27 | INFO    |     FAIL layer1.1.conv3                         k_l=  41  ratio=1.6005
+19:55:27 | INFO    |     FAIL layer1.2.conv3                         k_l=  41  ratio=1.6229
+19:55:27 | INFO    |   Group d=576:
+19:55:27 | INFO    |     FAIL layer1.0.conv2                         k_l=  34  ratio=2.0208
+19:55:27 | INFO    |     FAIL layer1.1.conv2                         k_l=  44  ratio=2.1464
+19:55:27 | INFO    |     FAIL layer1.2.conv2                         k_l=  43  ratio=2.1116
+19:55:27 | INFO    |   Group d=256:
+19:55:27 | INFO    |     FAIL layer1.1.conv1                         k_l=  38  ratio=1.9392
+19:55:27 | INFO    |     FAIL layer1.2.conv1                         k_l=  39  ratio=2.0132
+19:55:27 | INFO    |     FAIL layer2.0.conv1                         k_l=  65  ratio=1.9078
+19:55:27 | INFO    |     FAIL layer2.0.downsample.0                  k_l= 103  ratio=1.6290
+19:55:27 | INFO    |     FAIL layer3.0.conv3                         k_l= 157  ratio=1.7508
+19:55:27 | INFO    |     FAIL layer3.1.conv3                         k_l= 156  ratio=1.6885
+19:55:28 | INFO    |     FAIL layer3.2.conv3                         k_l= 150  ratio=1.7218
+19:55:28 | INFO    |     FAIL layer3.3.conv3                         k_l= 157  ratio=1.6826
+19:55:28 | INFO    |     FAIL layer3.4.conv3                         k_l= 152  ratio=1.7171
+19:55:28 | INFO    |     FAIL layer3.5.conv3                         k_l= 164  ratio=1.6512
+19:55:28 | INFO    |   Group d=1152:
+19:55:28 | INFO    |     FAIL layer2.0.conv2                         k_l=  85  ratio=2.3062
+19:55:28 | INFO    |     FAIL layer2.1.conv2                         k_l=  77  ratio=2.0920
+19:55:28 | INFO    |     FAIL layer2.2.conv2                         k_l=  84  ratio=2.2786
+19:55:28 | INFO    |     FAIL layer2.3.conv2                         k_l=  88  ratio=2.2906
+19:55:28 | INFO    |   Group d=128:
+19:55:28 | INFO    |     FAIL layer2.0.conv3                         k_l=  80  ratio=1.5326
+19:55:28 | INFO    |     FAIL layer2.1.conv3                         k_l=  75  ratio=1.5197
+19:55:28 | INFO    |     FAIL layer2.2.conv3                         k_l=  76  ratio=1.5306
+19:55:28 | INFO    |     WARN layer2.3.conv3                         k_l=  79  ratio=1.4964
+19:55:28 | INFO    |   Group d=512:
+19:55:30 | INFO    |     FAIL layer2.1.conv1                         k_l=  71  ratio=1.9583
+19:55:30 | INFO    |     FAIL layer2.2.conv1                         k_l=  76  ratio=2.0246
+19:55:30 | INFO    |     FAIL layer2.3.conv1                         k_l=  78  ratio=1.9990
+19:55:30 | INFO    |     FAIL layer3.0.conv1                         k_l= 122  ratio=1.9007
+19:55:30 | INFO    |     FAIL layer3.0.downsample.0                  k_l= 236  ratio=1.5677
+19:55:30 | INFO    |     FAIL layer4.0.conv3                         k_l= 365  ratio=1.5023
+19:55:31 | INFO    |     FAIL layer4.1.conv3                         k_l= 344  ratio=1.5571
+19:55:31 | INFO    |     FAIL layer4.2.conv3                         k_l= 291  ratio=1.6091
+19:55:31 | INFO    |   Group d=2304:
+19:55:34 | INFO    |     FAIL layer3.0.conv2                         k_l= 150  ratio=2.2126
+19:55:34 | INFO    |     FAIL layer3.1.conv2                         k_l= 164  ratio=2.3459
+19:55:34 | INFO    |     FAIL layer3.2.conv2                         k_l= 172  ratio=2.4252
+19:55:34 | INFO    |     FAIL layer3.3.conv2                         k_l= 173  ratio=2.3498
+19:55:34 | INFO    |     FAIL layer3.4.conv2                         k_l= 175  ratio=2.3512
+19:55:34 | INFO    |     FAIL layer3.5.conv2                         k_l= 170  ratio=2.2424
+19:55:34 | INFO    |   Group d=1024:
+19:55:36 | INFO    |     FAIL layer3.1.conv1                         k_l= 145  ratio=2.0523
+19:55:36 | INFO    |     FAIL layer3.2.conv1                         k_l= 144  ratio=1.9987
+19:55:36 | INFO    |     FAIL layer3.3.conv1                         k_l= 162  ratio=2.0187
+19:55:36 | INFO    |     FAIL layer3.4.conv1                         k_l= 161  ratio=2.0374
+19:55:36 | INFO    |     FAIL layer3.5.conv1                         k_l= 172  ratio=2.0708
+19:55:36 | INFO    |     FAIL layer4.0.conv1                         k_l= 279  ratio=1.9576
+19:55:37 | INFO    |     FAIL layer4.0.downsample.0                  k_l= 574  ratio=1.6161
+19:55:37 | INFO    |   Group d=4608:
+19:55:41 | INFO    |     FAIL layer4.0.conv2                         k_l= 302  ratio=1.7161
+19:55:41 | INFO    |     FAIL layer4.1.conv2                         k_l= 342  ratio=1.8402
+19:55:42 | INFO    |     FAIL layer4.2.conv2                         k_l= 321  ratio=1.8336
+19:55:42 | INFO    |   Group d=2048:
+19:55:45 | INFO    |     FAIL layer4.1.conv1                         k_l= 351  ratio=1.8187
+19:55:46 | INFO    |     FAIL layer4.2.conv1                         k_l= 355  ratio=1.7393
+19:55:46 | INFO    |     FAIL fc                                     k_l= 678  ratio=1.7243
+19:55:47 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+19:55:49 | INFO    | =================================================================
+19:55:50 | INFO    |   PHASE 2 VERDICT — resnet50
+19:55:50 | INFO    | =================================================================
+19:55:50 | INFO    |   Mean reconstruction ratio : 1.8750
+19:55:50 | INFO    |   Max reconstruction ratio  : 2.4252
+19:55:50 | INFO    |   Layers well-served (< 1.15): 0 / 53
+19:55:50 | INFO    |   Mean nesting angle (deg)  : 37.3
+19:55:50 | INFO    |   -> SHARED BASIS INSUFFICIENT (layers too diverse for one basis)
+19:55:50 | INFO    | =================================================================
+19:55:50 | INFO    | ======================================================================
+19:55:50 | INFO    | MODEL: vgg16
+19:55:50 | INFO    | ======================================================================
+19:55:50 | INFO    | [1/5] Loading vgg16 (pretrained)...
+19:57:28 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+20:01:04 | INFO    |       16 weight matrices extracted
+20:01:05 | INFO    | [3/5] Grouping layers by input dimension...
+20:01:05 | INFO    |       5 shareable groups (input-dim shared by >1 layer)
+20:01:05 | INFO    |       d=576  : 2 layers  -> ['features.2', 'features.5']
+20:01:05 | INFO    |       d=1152 : 2 layers  -> ['features.7', 'features.10']
+20:01:05 | INFO    |       d=2304 : 3 layers  -> ['features.12', 'features.14', 'features.17']
+20:01:05 | INFO    |       d=4096 : 2 layers  -> ['classifier.3', 'classifier.6']
+20:01:05 | INFO    |       d=4608 : 5 layers  -> ['features.19', 'features.21', 'features.24', 'features.26', 'features.28']
+20:01:05 | INFO    | [4/5] Building global basis per group and measuring ratios...
+20:01:05 | INFO    |   Group d=576:
+20:01:05 | INFO    |     FAIL features.2                             k_l=  31  ratio=1.5842
+20:01:05 | INFO    |     WARN features.5                             k_l=  58  ratio=1.4644
+20:01:05 | INFO    |   Group d=1152:
+20:01:05 | INFO    |     FAIL features.7                             k_l=  80  ratio=1.6243
+20:01:05 | INFO    |     FAIL features.10                            k_l= 131  ratio=1.5540
+20:01:05 | INFO    |   Group d=2304:
+20:01:06 | INFO    |     FAIL features.12                            k_l= 160  ratio=1.8546
+20:01:06 | INFO    |     FAIL features.14                            k_l= 169  ratio=1.8890
+20:01:06 | INFO    |     FAIL features.17                            k_l= 273  ratio=1.8002
+20:01:06 | INFO    |   Group d=4608:
+20:01:27 | INFO    |     FAIL features.19                            k_l= 330  ratio=2.0750
+20:01:28 | INFO    |     FAIL features.21                            k_l= 343  ratio=2.1051
+20:01:28 | INFO    |     FAIL features.24                            k_l= 336  ratio=2.0948
+20:01:30 | INFO    |     FAIL features.26                            k_l= 329  ratio=2.0390
+20:01:30 | INFO    |     FAIL features.28                            k_l= 319  ratio=2.0063
+20:01:30 | INFO    |   Group d=4096:
+20:03:02 | INFO    |     WARN classifier.3                           k_l=1541  ratio=1.3000
+20:03:04 | INFO    |     WARN classifier.6                           k_l= 544  ratio=1.3650
+20:03:04 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+20:03:10 | INFO    | =================================================================
+20:03:10 | INFO    |   PHASE 2 VERDICT — vgg16
+20:03:10 | INFO    | =================================================================
+20:03:10 | INFO    |   Mean reconstruction ratio : 1.7683
+20:03:10 | INFO    |   Max reconstruction ratio  : 2.1051
+20:03:10 | INFO    |   Layers well-served (< 1.15): 0 / 14
+20:03:10 | INFO    |   Mean nesting angle (deg)  : 67.0
+20:03:10 | INFO    |   -> SHARED BASIS INSUFFICIENT (layers too diverse for one basis)
+20:03:10 | INFO    | =================================================================
+20:03:10 | INFO    | ======================================================================
+20:03:10 | INFO    | MODEL: densenet121
+20:03:10 | INFO    | ======================================================================
+20:03:10 | INFO    | [1/5] Loading densenet121 (pretrained)...
+20:03:16 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+20:03:17 | INFO    |       121 weight matrices extracted
+20:03:18 | INFO    | [3/5] Grouping layers by input dimension...
+20:03:18 | INFO    |       30 shareable groups (input-dim shared by >1 layer)
+20:03:18 | INFO    |       d=128  : 2 layers  -> ['features.denseblock1.denselayer3.conv1', 'features.denseblock2.denselayer1.conv1']
+20:03:18 | INFO    |       d=160  : 2 layers  -> ['features.denseblock1.denselayer4.conv1', 'features.denseblock2.denselayer2.conv1']
+20:03:18 | INFO    |       d=192  : 2 layers  -> ['features.denseblock1.denselayer5.conv1', 'features.denseblock2.denselayer3.conv1']
+20:03:18 | INFO    |       d=224  : 2 layers  -> ['features.denseblock1.denselayer6.conv1', 'features.denseblock2.denselayer4.conv1']
+20:03:18 | INFO    |       d=256  : 3 layers  -> ['features.transition1.conv', 'features.denseblock2.denselayer5.conv1', 'features.denseblock3.denselayer1.conv1']
+20:03:18 | INFO    |       d=288  : 2 layers  -> ['features.denseblock2.denselayer6.conv1', 'features.denseblock3.denselayer2.conv1']
+20:03:18 | INFO    |       d=320  : 2 layers  -> ['features.denseblock2.denselayer7.conv1', 'features.denseblock3.denselayer3.conv1']
+20:03:18 | INFO    |       d=352  : 2 layers  -> ['features.denseblock2.denselayer8.conv1', 'features.denseblock3.denselayer4.conv1']
+20:03:18 | INFO    |       d=384  : 2 layers  -> ['features.denseblock2.denselayer9.conv1', 'features.denseblock3.denselayer5.conv1']
+20:03:18 | INFO    |       d=416  : 2 layers  -> ['features.denseblock2.denselayer10.conv1', 'features.denseblock3.denselayer6.conv1']
+20:03:18 | INFO    |       d=448  : 2 layers  -> ['features.denseblock2.denselayer11.conv1', 'features.denseblock3.denselayer7.conv1']
+20:03:18 | INFO    |       d=480  : 2 layers  -> ['features.denseblock2.denselayer12.conv1', 'features.denseblock3.denselayer8.conv1']
+20:03:18 | INFO    |       d=512  : 3 layers  -> ['features.transition2.conv', 'features.denseblock3.denselayer9.conv1', 'features.denseblock4.denselayer1.conv1']
+20:03:18 | INFO    |       d=544  : 2 layers  -> ['features.denseblock3.denselayer10.conv1', 'features.denseblock4.denselayer2.conv1']
+20:03:18 | INFO    |       d=576  : 2 layers  -> ['features.denseblock3.denselayer11.conv1', 'features.denseblock4.denselayer3.conv1']
+20:03:18 | INFO    |       d=608  : 2 layers  -> ['features.denseblock3.denselayer12.conv1', 'features.denseblock4.denselayer4.conv1']
+20:03:18 | INFO    |       d=640  : 2 layers  -> ['features.denseblock3.denselayer13.conv1', 'features.denseblock4.denselayer5.conv1']
+20:03:18 | INFO    |       d=672  : 2 layers  -> ['features.denseblock3.denselayer14.conv1', 'features.denseblock4.denselayer6.conv1']
+20:03:18 | INFO    |       d=704  : 2 layers  -> ['features.denseblock3.denselayer15.conv1', 'features.denseblock4.denselayer7.conv1']
+20:03:18 | INFO    |       d=736  : 2 layers  -> ['features.denseblock3.denselayer16.conv1', 'features.denseblock4.denselayer8.conv1']
+20:03:18 | INFO    |       d=768  : 2 layers  -> ['features.denseblock3.denselayer17.conv1', 'features.denseblock4.denselayer9.conv1']
+20:03:18 | INFO    |       d=800  : 2 layers  -> ['features.denseblock3.denselayer18.conv1', 'features.denseblock4.denselayer10.conv1']
+20:03:18 | INFO    |       d=832  : 2 layers  -> ['features.denseblock3.denselayer19.conv1', 'features.denseblock4.denselayer11.conv1']
+20:03:18 | INFO    |       d=864  : 2 layers  -> ['features.denseblock3.denselayer20.conv1', 'features.denseblock4.denselayer12.conv1']
+20:03:18 | INFO    |       d=896  : 2 layers  -> ['features.denseblock3.denselayer21.conv1', 'features.denseblock4.denselayer13.conv1']
+20:03:18 | INFO    |       d=928  : 2 layers  -> ['features.denseblock3.denselayer22.conv1', 'features.denseblock4.denselayer14.conv1']
+20:03:18 | INFO    |       d=960  : 2 layers  -> ['features.denseblock3.denselayer23.conv1', 'features.denseblock4.denselayer15.conv1']
+20:03:18 | INFO    |       d=992  : 2 layers  -> ['features.denseblock3.denselayer24.conv1', 'features.denseblock4.denselayer16.conv1']
+20:03:18 | INFO    |       d=1024 : 2 layers  -> ['features.transition3.conv', 'classifier']
+20:03:18 | INFO    |       d=1152 : 58 layers  -> ['features.denseblock1.denselayer1.conv2', 'features.denseblock1.denselayer2.conv2', 'features.denseblock1.denselayer3.conv2', 'features.denseblock1.denselayer4.conv2', 'features.denseblock1.denselayer5.conv2', 'features.denseblock1.denselayer6.conv2', 'features.denseblock2.denselayer1.conv2', 'features.denseblock2.denselayer2.conv2', 'features.denseblock2.denselayer3.conv2', 'features.denseblock2.denselayer4.conv2', 'features.denseblock2.denselayer5.conv2', 'features.denseblock2.denselayer6.conv2', 'features.denseblock2.denselayer7.conv2', 'features.denseblock2.denselayer8.conv2', 'features.denseblock2.denselayer9.conv2', 'features.denseblock2.denselayer10.conv2', 'features.denseblock2.denselayer11.conv2', 'features.denseblock2.denselayer12.conv2', 'features.denseblock3.denselayer1.conv2', 'features.denseblock3.denselayer2.conv2', 'features.denseblock3.denselayer3.conv2', 'features.denseblock3.denselayer4.conv2', 'features.denseblock3.denselayer5.conv2', 'features.denseblock3.denselayer6.conv2', 'features.denseblock3.denselayer7.conv2', 'features.denseblock3.denselayer8.conv2', 'features.denseblock3.denselayer9.conv2', 'features.denseblock3.denselayer10.conv2', 'features.denseblock3.denselayer11.conv2', 'features.denseblock3.denselayer12.conv2', 'features.denseblock3.denselayer13.conv2', 'features.denseblock3.denselayer14.conv2', 'features.denseblock3.denselayer15.conv2', 'features.denseblock3.denselayer16.conv2', 'features.denseblock3.denselayer17.conv2', 'features.denseblock3.denselayer18.conv2', 'features.denseblock3.denselayer19.conv2', 'features.denseblock3.denselayer20.conv2', 'features.denseblock3.denselayer21.conv2', 'features.denseblock3.denselayer22.conv2', 'features.denseblock3.denselayer23.conv2', 'features.denseblock3.denselayer24.conv2', 'features.denseblock4.denselayer1.conv2', 'features.denseblock4.denselayer2.conv2', 'features.denseblock4.denselayer3.conv2', 'features.denseblock4.denselayer4.conv2', 'features.denseblock4.denselayer5.conv2', 'features.denseblock4.denselayer6.conv2', 'features.denseblock4.denselayer7.conv2', 'features.denseblock4.denselayer8.conv2', 'features.denseblock4.denselayer9.conv2', 'features.denseblock4.denselayer10.conv2', 'features.denseblock4.denselayer11.conv2', 'features.denseblock4.denselayer12.conv2', 'features.denseblock4.denselayer13.conv2', 'features.denseblock4.denselayer14.conv2', 'features.denseblock4.denselayer15.conv2', 'features.denseblock4.denselayer16.conv2']
+20:03:18 | INFO    | [4/5] Building global basis per group and measuring ratios...
+20:03:18 | INFO    |   Group d=1152:
+20:03:19 | INFO    |     FAIL features.denseblock1.denselayer1.conv2 k_l=  21  ratio=3.3329
+20:03:19 | INFO    |     FAIL features.denseblock1.denselayer2.conv2 k_l=  23  ratio=3.2754
+20:03:19 | INFO    |     FAIL features.denseblock1.denselayer3.conv2 k_l=  24  ratio=3.3291
+20:03:19 | INFO    |     FAIL features.denseblock1.denselayer4.conv2 k_l=  25  ratio=3.2969
+20:03:19 | INFO    |     FAIL features.denseblock1.denselayer5.conv2 k_l=  24  ratio=3.2324
+20:03:19 | INFO    |     FAIL features.denseblock1.denselayer6.conv2 k_l=  26  ratio=3.1648
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer1.conv2 k_l=  16  ratio=3.4012
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer2.conv2 k_l=  23  ratio=3.1278
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer3.conv2 k_l=  24  ratio=3.2277
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer4.conv2 k_l=  25  ratio=3.3654
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer5.conv2 k_l=  25  ratio=3.1970
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer6.conv2 k_l=  24  ratio=3.2677
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer7.conv2 k_l=  25  ratio=3.0961
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer8.conv2 k_l=  25  ratio=3.2345
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer9.conv2 k_l=  25  ratio=3.1373
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer10.conv2 k_l=  27  ratio=3.1495
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer11.conv2 k_l=  27  ratio=3.2293
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer12.conv2 k_l=  27  ratio=3.1939
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer1.conv2 k_l=  24  ratio=3.1966
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer2.conv2 k_l=  23  ratio=3.0858
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer3.conv2 k_l=  24  ratio=3.1178
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer4.conv2 k_l=  25  ratio=3.2327
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer5.conv2 k_l=  25  ratio=3.1015
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer6.conv2 k_l=  26  ratio=3.2646
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer7.conv2 k_l=  25  ratio=3.0860
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer8.conv2 k_l=  26  ratio=3.1837
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer9.conv2 k_l=  26  ratio=3.1451
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer10.conv2 k_l=  25  ratio=3.2372
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer11.conv2 k_l=  25  ratio=3.1760
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer12.conv2 k_l=  26  ratio=3.2950
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer13.conv2 k_l=  25  ratio=3.0796
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer14.conv2 k_l=  25  ratio=3.0437
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer15.conv2 k_l=  26  ratio=3.0808
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer16.conv2 k_l=  26  ratio=2.9903
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer17.conv2 k_l=  26  ratio=3.0923
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer18.conv2 k_l=  25  ratio=2.9938
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer19.conv2 k_l=  25  ratio=2.9213
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer20.conv2 k_l=  27  ratio=3.2039
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer21.conv2 k_l=  26  ratio=2.8996
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer22.conv2 k_l=  25  ratio=2.8668
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer23.conv2 k_l=  27  ratio=3.1192
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer24.conv2 k_l=  27  ratio=3.0507
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer1.conv2 k_l=  26  ratio=3.0255
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer2.conv2 k_l=  26  ratio=2.8301
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer3.conv2 k_l=  25  ratio=2.8832
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer4.conv2 k_l=  25  ratio=2.8310
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer5.conv2 k_l=  27  ratio=2.8931
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer6.conv2 k_l=  26  ratio=2.8206
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer7.conv2 k_l=  27  ratio=2.8947
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer8.conv2 k_l=  27  ratio=2.8708
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer9.conv2 k_l=  27  ratio=2.7738
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer10.conv2 k_l=  27  ratio=2.7996
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer11.conv2 k_l=  27  ratio=2.7591
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer12.conv2 k_l=  27  ratio=2.7642
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer13.conv2 k_l=  27  ratio=2.8365
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer14.conv2 k_l=  27  ratio=2.8016
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer15.conv2 k_l=  27  ratio=2.7287
+20:03:19 | INFO    |     FAIL features.denseblock4.denselayer16.conv2 k_l=  27  ratio=2.8432
+20:03:19 | INFO    |   Group d=128:
+20:03:19 | INFO    |     WARN features.denseblock1.denselayer3.conv1 k_l=  42  ratio=1.3973
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer1.conv1 k_l=  21  ratio=1.5542
+20:03:19 | INFO    |   Group d=160:
+20:03:19 | INFO    |     FAIL features.denseblock1.denselayer4.conv1 k_l=  42  ratio=1.5341
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer2.conv1 k_l=  38  ratio=1.5674
+20:03:19 | INFO    |   Group d=192:
+20:03:19 | INFO    |     WARN features.denseblock1.denselayer5.conv1 k_l=  48  ratio=1.4900
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer3.conv1 k_l=  43  ratio=1.5179
+20:03:19 | INFO    |   Group d=224:
+20:03:19 | INFO    |     FAIL features.denseblock1.denselayer6.conv1 k_l=  46  ratio=1.5290
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer4.conv1 k_l=  54  ratio=1.5378
+20:03:19 | INFO    |   Group d=256:
+20:03:19 | INFO    |     FAIL features.transition1.conv              k_l=  56  ratio=1.9018
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer5.conv1 k_l=  46  ratio=1.7826
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer1.conv1 k_l=  56  ratio=1.8347
+20:03:19 | INFO    |   Group d=288:
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer6.conv1 k_l=  48  ratio=1.6029
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer2.conv1 k_l=  56  ratio=1.5739
+20:03:19 | INFO    |   Group d=320:
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer7.conv1 k_l=  67  ratio=1.6179
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer3.conv1 k_l=  67  ratio=1.6141
+20:03:19 | INFO    |   Group d=352:
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer8.conv1 k_l=  65  ratio=1.5878
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer4.conv1 k_l=  67  ratio=1.5650
+20:03:19 | INFO    |   Group d=384:
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer9.conv1 k_l=  66  ratio=1.6107
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer5.conv1 k_l=  66  ratio=1.6079
+20:03:19 | INFO    |   Group d=416:
+20:03:19 | INFO    |     FAIL features.denseblock2.denselayer10.conv1 k_l=  74  ratio=1.6030
+20:03:19 | INFO    |     FAIL features.denseblock3.denselayer6.conv1 k_l=  72  ratio=1.6123
+20:03:19 | INFO    |   Group d=448:
+20:03:20 | INFO    |     FAIL features.denseblock2.denselayer11.conv1 k_l=  76  ratio=1.6158
+20:03:20 | INFO    |     FAIL features.denseblock3.denselayer7.conv1 k_l=  63  ratio=1.6055
+20:03:20 | INFO    |   Group d=480:
+20:03:20 | INFO    |     FAIL features.denseblock2.denselayer12.conv1 k_l=  78  ratio=1.6605
+20:03:20 | INFO    |     FAIL features.denseblock3.denselayer8.conv1 k_l=  79  ratio=1.6406
+20:03:20 | INFO    |   Group d=512:
+20:03:20 | INFO    |     FAIL features.transition2.conv              k_l= 140  ratio=1.9450
+20:03:20 | INFO    |     FAIL features.denseblock3.denselayer9.conv1 k_l=  80  ratio=1.8496
+20:03:20 | INFO    |     FAIL features.denseblock4.denselayer1.conv1 k_l=  90  ratio=1.9267
+20:03:20 | INFO    |   Group d=544:
+20:03:20 | INFO    |     FAIL features.denseblock3.denselayer10.conv1 k_l=  77  ratio=1.7159
+20:03:20 | INFO    |     FAIL features.denseblock4.denselayer2.conv1 k_l=  91  ratio=1.7254
+20:03:20 | INFO    |   Group d=576:
+20:03:20 | INFO    |     FAIL features.denseblock3.denselayer11.conv1 k_l=  80  ratio=1.7148
+20:03:20 | INFO    |     FAIL features.denseblock4.denselayer3.conv1 k_l=  91  ratio=1.7293
+20:03:20 | INFO    |   Group d=608:
+20:03:20 | INFO    |     FAIL features.denseblock3.denselayer12.conv1 k_l=  85  ratio=1.7455
+20:03:20 | INFO    |     FAIL features.denseblock4.denselayer4.conv1 k_l=  90  ratio=1.7372
+20:03:20 | INFO    |   Group d=640:
+20:03:20 | INFO    |     FAIL features.denseblock3.denselayer13.conv1 k_l=  80  ratio=1.7334
+20:03:20 | INFO    |     FAIL features.denseblock4.denselayer5.conv1 k_l=  91  ratio=1.7551
+20:03:20 | INFO    |   Group d=672:
+20:03:20 | INFO    |     FAIL features.denseblock3.denselayer14.conv1 k_l=  79  ratio=1.7361
+20:03:20 | INFO    |     FAIL features.denseblock4.denselayer6.conv1 k_l=  90  ratio=1.7295
+20:03:20 | INFO    |   Group d=704:
+20:03:20 | INFO    |     FAIL features.denseblock3.denselayer15.conv1 k_l=  87  ratio=1.7962
+20:03:20 | INFO    |     FAIL features.denseblock4.denselayer7.conv1 k_l=  90  ratio=1.7875
+20:03:20 | INFO    |   Group d=736:
+20:03:21 | INFO    |     FAIL features.denseblock3.denselayer16.conv1 k_l=  87  ratio=1.7787
+20:03:21 | INFO    |     FAIL features.denseblock4.denselayer8.conv1 k_l=  92  ratio=1.8017
+20:03:21 | INFO    |   Group d=768:
+20:03:21 | INFO    |     FAIL features.denseblock3.denselayer17.conv1 k_l=  88  ratio=1.7933
+20:03:21 | INFO    |     FAIL features.denseblock4.denselayer9.conv1 k_l=  91  ratio=1.7381
+20:03:21 | INFO    |   Group d=800:
+20:03:21 | INFO    |     FAIL features.denseblock3.denselayer18.conv1 k_l=  89  ratio=1.8214
+20:03:21 | INFO    |     FAIL features.denseblock4.denselayer10.conv1 k_l=  91  ratio=1.8219
+20:03:21 | INFO    |   Group d=832:
+20:03:21 | INFO    |     FAIL features.denseblock3.denselayer19.conv1 k_l=  90  ratio=1.8223
+20:03:21 | INFO    |     FAIL features.denseblock4.denselayer11.conv1 k_l=  91  ratio=1.7806
+20:03:21 | INFO    |   Group d=864:
+20:03:21 | INFO    |     FAIL features.denseblock3.denselayer20.conv1 k_l=  91  ratio=1.8122
+20:03:21 | INFO    |     FAIL features.denseblock4.denselayer12.conv1 k_l=  92  ratio=1.8284
+20:03:21 | INFO    |   Group d=896:
+20:03:21 | INFO    |     FAIL features.denseblock3.denselayer21.conv1 k_l=  92  ratio=1.8421
+20:03:21 | INFO    |     FAIL features.denseblock4.denselayer13.conv1 k_l=  91  ratio=1.8130
+20:03:21 | INFO    |   Group d=928:
+20:03:21 | INFO    |     FAIL features.denseblock3.denselayer22.conv1 k_l=  89  ratio=1.8125
+20:03:21 | INFO    |     FAIL features.denseblock4.denselayer14.conv1 k_l=  92  ratio=1.7781
+20:03:21 | INFO    |   Group d=960:
+20:03:21 | INFO    |     FAIL features.denseblock3.denselayer23.conv1 k_l=  93  ratio=1.8466
+20:03:21 | INFO    |     FAIL features.denseblock4.denselayer15.conv1 k_l=  92  ratio=1.8486
+20:03:21 | INFO    |   Group d=992:
+20:03:21 | INFO    |     FAIL features.denseblock3.denselayer24.conv1 k_l=  93  ratio=1.8602
+20:03:21 | INFO    |     FAIL features.denseblock4.denselayer16.conv1 k_l=  93  ratio=1.8371
+20:03:21 | INFO    |   Group d=1024:
+20:03:22 | INFO    |     FAIL features.transition3.conv              k_l= 276  ratio=1.5183
+20:03:23 | INFO    |     FAIL classifier                             k_l= 273  ratio=1.5454
+20:03:24 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+20:03:30 | ERROR   | FAILED on densenet121: bad allocation
+20:03:30 | INFO    | ======================================================================
+20:03:30 | INFO    | MODEL: mobilenet_v3_large
+20:03:30 | INFO    | ======================================================================
+20:03:30 | INFO    | [1/5] Loading mobilenet_v3_large (pretrained)...
+20:03:35 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+20:03:36 | INFO    |       64 weight matrices extracted
+20:03:36 | INFO    | [3/5] Grouping layers by input dimension...
+20:03:36 | INFO    |       17 shareable groups (input-dim shared by >1 layer)
+20:03:36 | INFO    |       d=9    : 9 layers  -> ['features.1.block.0.0', 'features.2.block.1.0', 'features.3.block.1.0', 'features.7.block.1.0', 'features.8.block.1.0', 'features.9.block.1.0', 'features.10.block.1.0', 'features.11.block.1.0', 'features.12.block.1.0']
+20:03:36 | INFO    |       d=16   : 2 layers  -> ['features.1.block.1.0', 'features.2.block.0.0']
+20:03:36 | INFO    |       d=24   : 3 layers  -> ['features.3.block.0.0', 'features.4.block.0.0', 'features.4.block.2.fc2']
+20:03:36 | INFO    |       d=25   : 6 layers  -> ['features.4.block.1.0', 'features.5.block.1.0', 'features.6.block.1.0', 'features.13.block.1.0', 'features.14.block.1.0', 'features.15.block.1.0']
+20:03:36 | INFO    |       d=32   : 2 layers  -> ['features.5.block.2.fc2', 'features.6.block.2.fc2']
+20:03:36 | INFO    |       d=40   : 3 layers  -> ['features.5.block.0.0', 'features.6.block.0.0', 'features.7.block.0.0']
+20:03:36 | INFO    |       d=72   : 3 layers  -> ['features.3.block.2.0', 'features.4.block.2.fc1', 'features.4.block.3.0']
+20:03:36 | INFO    |       d=80   : 4 layers  -> ['features.8.block.0.0', 'features.9.block.0.0', 'features.10.block.0.0', 'features.11.block.0.0']
+20:03:36 | INFO    |       d=112  : 2 layers  -> ['features.12.block.0.0', 'features.13.block.0.0']
+20:03:36 | INFO    |       d=120  : 5 layers  -> ['features.5.block.2.fc1', 'features.5.block.3.0', 'features.6.block.2.fc1', 'features.6.block.3.0', 'features.11.block.2.fc2']
+20:03:36 | INFO    |       d=160  : 3 layers  -> ['features.14.block.0.0', 'features.15.block.0.0', 'features.16.0']
+20:03:36 | INFO    |       d=168  : 2 layers  -> ['features.12.block.2.fc2', 'features.13.block.2.fc2']
+20:03:36 | INFO    |       d=184  : 2 layers  -> ['features.9.block.2.0', 'features.10.block.2.0']
+20:03:36 | INFO    |       d=240  : 3 layers  -> ['features.7.block.2.0', 'features.14.block.2.fc2', 'features.15.block.2.fc2']
+20:03:36 | INFO    |       d=480  : 2 layers  -> ['features.11.block.2.fc1', 'features.11.block.3.0']
+20:03:36 | INFO    |       d=672  : 4 layers  -> ['features.12.block.2.fc1', 'features.12.block.3.0', 'features.13.block.2.fc1', 'features.13.block.3.0']
+20:03:36 | INFO    |       d=960  : 5 layers  -> ['features.14.block.2.fc1', 'features.14.block.3.0', 'features.15.block.2.fc1', 'features.15.block.3.0', 'classifier.0']
+20:03:36 | INFO    | [4/5] Building global basis per group and measuring ratios...
+20:03:36 | INFO    |   Group d=9:
+20:03:36 | INFO    |     FAIL features.1.block.0.0                   k_l=   4  ratio=1.6424
+20:03:36 | INFO    |     OK   features.2.block.1.0                   k_l=   6  ratio=1.0735
+20:03:36 | INFO    |     WARN features.3.block.1.0                   k_l=   5  ratio=1.4658
+20:03:36 | INFO    |     FAIL features.7.block.1.0                   k_l=   1  ratio=2.9525
+20:03:36 | INFO    |     OK   features.8.block.1.0                   k_l=   5  ratio=1.0860
+20:03:36 | INFO    |     OK   features.9.block.1.0                   k_l=   5  ratio=1.0553
+20:03:36 | INFO    |     OK   features.10.block.1.0                  k_l=   5  ratio=1.0312
+20:03:36 | INFO    |     WARN features.11.block.1.0                  k_l=   3  ratio=1.1827
+20:03:36 | INFO    |     OK   features.12.block.1.0                  k_l=   4  ratio=1.1428
+20:03:36 | INFO    |   Group d=16:
+20:03:36 | INFO    |     WARN features.1.block.1.0                   k_l=   9  ratio=1.3872
+20:03:36 | INFO    |     WARN features.2.block.0.0                   k_l=  12  ratio=1.3419
+20:03:36 | INFO    |   Group d=24:
+20:03:36 | INFO    |     WARN features.3.block.0.0                   k_l=  17  ratio=1.2988
+20:03:36 | INFO    |     WARN features.4.block.0.0                   k_l=  19  ratio=1.3405
+20:03:36 | INFO    |     WARN features.4.block.2.fc2                 k_l=   6  ratio=1.3632
+20:03:36 | INFO    |   Group d=72:
+20:03:36 | INFO    |     FAIL features.3.block.2.0                   k_l=  16  ratio=1.8314
+20:03:36 | INFO    |     FAIL features.4.block.2.fc1                 k_l=  10  ratio=1.6190
+20:03:36 | INFO    |     FAIL features.4.block.3.0                   k_l=  28  ratio=1.8010
+20:03:36 | INFO    |   Group d=25:
+20:03:36 | INFO    |     FAIL features.4.block.1.0                   k_l=   1  ratio=2.2692
+20:03:36 | INFO    |     WARN features.5.block.1.0                   k_l=   5  ratio=1.3005
+20:03:36 | INFO    |     WARN features.6.block.1.0                   k_l=   6  ratio=1.1644
+20:03:36 | INFO    |     WARN features.13.block.1.0                  k_l=   2  ratio=1.3506
+20:03:36 | INFO    |     WARN features.14.block.1.0                  k_l=   5  ratio=1.2976
+20:03:36 | INFO    |     WARN features.15.block.1.0                  k_l=   3  ratio=1.1509
+20:03:36 | INFO    |   Group d=40:
+20:03:36 | INFO    |     WARN features.5.block.0.0                   k_l=  24  ratio=1.2292
+20:03:36 | INFO    |     WARN features.6.block.0.0                   k_l=  23  ratio=1.2113
+20:03:36 | INFO    |     WARN features.7.block.0.0                   k_l=  32  ratio=1.3307
+20:03:36 | INFO    |   Group d=120:
+20:03:36 | INFO    |     FAIL features.5.block.2.fc1                 k_l=  21  ratio=2.2601
+20:03:36 | INFO    |     FAIL features.5.block.3.0                   k_l=  27  ratio=2.2725
+20:03:36 | INFO    |     FAIL features.6.block.2.fc1                 k_l=  20  ratio=2.3418
+20:03:36 | INFO    |     FAIL features.6.block.3.0                   k_l=  25  ratio=2.2084
+20:03:36 | INFO    |     FAIL features.11.block.2.fc2                k_l=  76  ratio=1.5340
+20:03:36 | INFO    |   Group d=32:
+20:03:36 | INFO    |     WARN features.5.block.2.fc2                 k_l=  21  ratio=1.2774
+20:03:36 | INFO    |     WARN features.6.block.2.fc2                 k_l=  20  ratio=1.2686
+20:03:36 | INFO    |   Group d=240:
+20:03:36 | INFO    |     WARN features.7.block.2.0                   k_l=  59  ratio=1.3768
+20:03:36 | INFO    |     WARN features.14.block.2.fc2                k_l= 169  ratio=1.2651
+20:03:37 | INFO    |     WARN features.15.block.2.fc2                k_l= 159  ratio=1.2836
+20:03:37 | INFO    |   Group d=80:
+20:03:37 | INFO    |     WARN features.8.block.0.0                   k_l=  51  ratio=1.3224
+20:03:37 | INFO    |     WARN features.9.block.0.0                   k_l=  48  ratio=1.3375
+20:03:37 | INFO    |     WARN features.10.block.0.0                  k_l=  46  ratio=1.3314
+20:03:37 | INFO    |     WARN features.11.block.0.0                  k_l=  63  ratio=1.3051
+20:03:37 | INFO    |   Group d=184:
+20:03:37 | INFO    |     FAIL features.9.block.2.0                   k_l=  49  ratio=1.6604
+20:03:37 | INFO    |     FAIL features.10.block.2.0                  k_l=  47  ratio=1.6460
+20:03:37 | INFO    |   Group d=480:
+20:03:37 | INFO    |     FAIL features.11.block.2.fc1                k_l=  74  ratio=1.6566
+20:03:37 | INFO    |     FAIL features.11.block.3.0                  k_l=  87  ratio=1.7347
+20:03:37 | INFO    |   Group d=112:
+20:03:37 | INFO    |     OK   features.12.block.0.0                  k_l=  82  ratio=1.1195
+20:03:37 | INFO    |     WARN features.13.block.0.0                  k_l=  85  ratio=1.1619
+20:03:37 | INFO    |   Group d=672:
+20:03:37 | INFO    |     FAIL features.12.block.2.fc1                k_l= 105  ratio=2.1374
+20:03:37 | INFO    |     FAIL features.12.block.3.0                  k_l=  84  ratio=2.1239
+20:03:37 | INFO    |     FAIL features.13.block.2.fc1                k_l= 119  ratio=2.1038
+20:03:37 | INFO    |     FAIL features.13.block.3.0                  k_l= 131  ratio=2.2225
+20:03:37 | INFO    |   Group d=168:
+20:03:37 | INFO    |     WARN features.12.block.2.fc2                k_l= 105  ratio=1.1990
+20:03:37 | INFO    |     WARN features.13.block.2.fc2                k_l= 120  ratio=1.1803
+20:03:37 | INFO    |   Group d=160:
+20:03:37 | INFO    |     WARN features.14.block.0.0                  k_l= 121  ratio=1.1519
+20:03:37 | INFO    |     WARN features.15.block.0.0                  k_l= 123  ratio=1.1514
+20:03:37 | INFO    |     WARN features.16.0                          k_l= 126  ratio=1.2229
+20:03:37 | INFO    |   Group d=960:
+20:03:38 | INFO    |     FAIL features.14.block.2.fc1                k_l= 170  ratio=2.2210
+20:03:38 | INFO    |     FAIL features.14.block.3.0                  k_l= 123  ratio=2.2136
+20:03:38 | INFO    |     FAIL features.15.block.2.fc1                k_l= 171  ratio=2.1374
+20:03:38 | INFO    |     FAIL features.15.block.3.0                  k_l= 125  ratio=2.1140
+20:03:38 | INFO    |     FAIL classifier.0                           k_l= 534  ratio=1.8216
+20:03:39 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+20:03:40 | INFO    | =================================================================
+20:03:40 | INFO    |   PHASE 2 VERDICT — mobilenet_v3_large
+20:03:40 | INFO    | =================================================================
+20:03:40 | INFO    |   Mean reconstruction ratio : 1.5547
+20:03:40 | INFO    |   Max reconstruction ratio  : 2.9525
+20:03:40 | INFO    |   Layers well-served (< 1.15): 6 / 60
+20:03:40 | INFO    |   Mean nesting angle (deg)  : 14.6
+20:03:40 | INFO    |   -> SHARED BASIS INSUFFICIENT (layers too diverse for one basis)
+20:03:40 | INFO    | =================================================================
+20:03:40 | INFO    | ======================================================================
+20:03:40 | INFO    | MODEL: efficientnet_b0
+20:03:40 | INFO    | ======================================================================
+20:03:40 | INFO    | [1/5] Loading efficientnet_b0 (pretrained)...
+20:03:44 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+20:03:45 | INFO    |       82 weight matrices extracted
+20:03:45 | INFO    | [3/5] Grouping layers by input dimension...
+20:03:45 | INFO    |       19 shareable groups (input-dim shared by >1 layer)
+20:03:45 | INFO    |       d=6    : 2 layers  -> ['features.2.1.block.2.fc2', 'features.3.0.block.2.fc2']
+20:03:45 | INFO    |       d=9    : 7 layers  -> ['features.1.0.block.0.0', 'features.2.0.block.1.0', 'features.2.1.block.1.0', 'features.4.0.block.1.0', 'features.4.1.block.1.0', 'features.4.2.block.1.0', 'features.7.0.block.1.0']
+20:03:45 | INFO    |       d=10   : 2 layers  -> ['features.3.1.block.2.fc2', 'features.4.0.block.2.fc2']
+20:03:45 | INFO    |       d=20   : 3 layers  -> ['features.4.1.block.2.fc2', 'features.4.2.block.2.fc2', 'features.5.0.block.2.fc2']
+20:03:45 | INFO    |       d=24   : 2 layers  -> ['features.2.1.block.0.0', 'features.3.0.block.0.0']
+20:03:45 | INFO    |       d=25   : 9 layers  -> ['features.3.0.block.1.0', 'features.3.1.block.1.0', 'features.5.0.block.1.0', 'features.5.1.block.1.0', 'features.5.2.block.1.0', 'features.6.0.block.1.0', 'features.6.1.block.1.0', 'features.6.2.block.1.0', 'features.6.3.block.1.0']
+20:03:45 | INFO    |       d=28   : 3 layers  -> ['features.5.1.block.2.fc2', 'features.5.2.block.2.fc2', 'features.6.0.block.2.fc2']
+20:03:45 | INFO    |       d=32   : 2 layers  -> ['features.1.0.block.1.fc1', 'features.1.0.block.2.0']
+20:03:45 | INFO    |       d=40   : 2 layers  -> ['features.3.1.block.0.0', 'features.4.0.block.0.0']
+20:03:45 | INFO    |       d=48   : 4 layers  -> ['features.6.1.block.2.fc2', 'features.6.2.block.2.fc2', 'features.6.3.block.2.fc2', 'features.7.0.block.2.fc2']
+20:03:45 | INFO    |       d=80   : 3 layers  -> ['features.4.1.block.0.0', 'features.4.2.block.0.0', 'features.5.0.block.0.0']
+20:03:45 | INFO    |       d=96   : 2 layers  -> ['features.2.0.block.2.fc1', 'features.2.0.block.3.0']
+20:03:45 | INFO    |       d=112  : 3 layers  -> ['features.5.1.block.0.0', 'features.5.2.block.0.0', 'features.6.0.block.0.0']
+20:03:45 | INFO    |       d=144  : 4 layers  -> ['features.2.1.block.2.fc1', 'features.2.1.block.3.0', 'features.3.0.block.2.fc1', 'features.3.0.block.3.0']
+20:03:45 | INFO    |       d=192  : 4 layers  -> ['features.6.1.block.0.0', 'features.6.2.block.0.0', 'features.6.3.block.0.0', 'features.7.0.block.0.0']
+20:03:45 | INFO    |       d=240  : 4 layers  -> ['features.3.1.block.2.fc1', 'features.3.1.block.3.0', 'features.4.0.block.2.fc1', 'features.4.0.block.3.0']
+20:03:45 | INFO    |       d=480  : 6 layers  -> ['features.4.1.block.2.fc1', 'features.4.1.block.3.0', 'features.4.2.block.2.fc1', 'features.4.2.block.3.0', 'features.5.0.block.2.fc1', 'features.5.0.block.3.0']
+20:03:45 | INFO    |       d=672  : 6 layers  -> ['features.5.1.block.2.fc1', 'features.5.1.block.3.0', 'features.5.2.block.2.fc1', 'features.5.2.block.3.0', 'features.6.0.block.2.fc1', 'features.6.0.block.3.0']
+20:03:45 | INFO    |       d=1152 : 8 layers  -> ['features.6.1.block.2.fc1', 'features.6.1.block.3.0', 'features.6.2.block.2.fc1', 'features.6.2.block.3.0', 'features.6.3.block.2.fc1', 'features.6.3.block.3.0', 'features.7.0.block.2.fc1', 'features.7.0.block.3.0']
+20:03:45 | INFO    | [4/5] Building global basis per group and measuring ratios...
+20:03:45 | INFO    |   Group d=9:
+20:03:45 | INFO    |     FAIL features.1.0.block.0.0                 k_l=   4  ratio=1.5003
+20:03:45 | INFO    |     OK   features.2.0.block.1.0                 k_l=   6  ratio=1.0940
+20:03:45 | INFO    |     WARN features.2.1.block.1.0                 k_l=   5  ratio=1.1724
+20:03:45 | INFO    |     WARN features.4.0.block.1.0                 k_l=   2  ratio=1.3553
+20:03:45 | INFO    |     OK   features.4.1.block.1.0                 k_l=   5  ratio=1.0781
+20:03:45 | INFO    |     OK   features.4.2.block.1.0                 k_l=   5  ratio=1.0395
+20:03:45 | INFO    |     WARN features.7.0.block.1.0                 k_l=   2  ratio=1.2977
+20:03:45 | INFO    |   Group d=32:
+20:03:45 | INFO    |     WARN features.1.0.block.1.fc1               k_l=   6  ratio=1.4717
+20:03:45 | INFO    |     WARN features.1.0.block.2.0                 k_l=  12  ratio=1.4672
+20:03:45 | INFO    |   Group d=96:
+20:03:45 | INFO    |     WARN features.2.0.block.2.fc1               k_l=   3  ratio=1.4837
+20:03:45 | INFO    |     WARN features.2.0.block.3.0                 k_l=  17  ratio=1.2592
+20:03:45 | INFO    |   Group d=24:
+20:03:45 | INFO    |     OK   features.2.1.block.0.0                 k_l=  18  ratio=1.1443
+20:03:45 | INFO    |     OK   features.3.0.block.0.0                 k_l=  20  ratio=1.1319
+20:03:45 | INFO    |   Group d=144:
+20:03:45 | INFO    |     FAIL features.2.1.block.2.fc1               k_l=   4  ratio=1.7862
+20:03:45 | INFO    |     FAIL features.2.1.block.3.0                 k_l=  18  ratio=2.1933
+20:03:45 | INFO    |     FAIL features.3.0.block.2.fc1               k_l=   4  ratio=2.0713
+20:03:45 | INFO    |     FAIL features.3.0.block.3.0                 k_l=  32  ratio=2.2326
+20:03:45 | INFO    |   Group d=6:
+20:03:45 | INFO    |     FAIL features.2.1.block.2.fc2               k_l=   5  ratio=2.2752
+20:03:45 | INFO    |     OK   features.3.0.block.2.fc2               k_l=   5  ratio=1.0974
+20:03:45 | INFO    |   Group d=25:
+20:03:45 | INFO    |     FAIL features.3.0.block.1.0                 k_l=   4  ratio=1.5266
+20:03:45 | INFO    |     WARN features.3.1.block.1.0                 k_l=   6  ratio=1.3022
+20:03:45 | INFO    |     WARN features.5.0.block.1.0                 k_l=   5  ratio=1.2870
+20:03:45 | INFO    |     OK   features.5.1.block.1.0                 k_l=   7  ratio=1.0919
+20:03:45 | INFO    |     OK   features.5.2.block.1.0                 k_l=   7  ratio=1.0799
+20:03:45 | INFO    |     FAIL features.6.0.block.1.0                 k_l=   2  ratio=1.7092
+20:03:45 | INFO    |     OK   features.6.1.block.1.0                 k_l=   7  ratio=1.1252
+20:03:45 | INFO    |     OK   features.6.2.block.1.0                 k_l=   7  ratio=1.1006
+20:03:45 | INFO    |     OK   features.6.3.block.1.0                 k_l=   8  ratio=1.1237
+20:03:45 | INFO    |   Group d=40:
+20:03:45 | INFO    |     OK   features.3.1.block.0.0                 k_l=  29  ratio=1.0708
+20:03:45 | INFO    |     OK   features.4.0.block.0.0                 k_l=  32  ratio=1.1262
+20:03:45 | INFO    |   Group d=240:
+20:03:45 | INFO    |     FAIL features.3.1.block.2.fc1               k_l=   9  ratio=2.9045
+20:03:45 | INFO    |     FAIL features.3.1.block.3.0                 k_l=  29  ratio=2.1948
+20:03:45 | INFO    |     FAIL features.4.0.block.2.fc1               k_l=   8  ratio=2.1256
+20:03:45 | INFO    |     FAIL features.4.0.block.3.0                 k_l=  60  ratio=2.0776
+20:03:45 | INFO    |   Group d=10:
+20:03:45 | INFO    |     WARN features.3.1.block.2.fc2               k_l=   9  ratio=1.2190
+20:03:45 | INFO    |     OK   features.4.0.block.2.fc2               k_l=   7  ratio=1.1496
+20:03:45 | INFO    |   Group d=80:
+20:03:45 | INFO    |     WARN features.4.1.block.0.0                 k_l=  56  ratio=1.1756
+20:03:45 | INFO    |     WARN features.4.2.block.0.0                 k_l=  58  ratio=1.1683
+20:03:45 | INFO    |     WARN features.5.0.block.0.0                 k_l=  61  ratio=1.2337
+20:03:45 | INFO    |   Group d=480:
+20:03:46 | INFO    |     FAIL features.4.1.block.2.fc1               k_l=  16  ratio=2.5121
+20:03:46 | INFO    |     FAIL features.4.1.block.3.0                 k_l=  58  ratio=2.5854
+20:03:46 | INFO    |     FAIL features.4.2.block.2.fc1               k_l=  16  ratio=2.4749
+20:03:46 | INFO    |     FAIL features.4.2.block.3.0                 k_l=  59  ratio=2.6004
+20:03:46 | INFO    |     FAIL features.5.0.block.2.fc1               k_l=  16  ratio=2.2911
+20:03:46 | INFO    |     FAIL features.5.0.block.3.0                 k_l=  87  ratio=2.5500
+20:03:46 | INFO    |   Group d=20:
+20:03:46 | INFO    |     WARN features.4.1.block.2.fc2               k_l=  16  ratio=1.1662
+20:03:46 | INFO    |     OK   features.4.2.block.2.fc2               k_l=  16  ratio=1.1034
+20:03:46 | INFO    |     WARN features.5.0.block.2.fc2               k_l=  16  ratio=1.2259
+20:03:46 | INFO    |   Group d=112:
+20:03:46 | INFO    |     OK   features.5.1.block.0.0                 k_l=  83  ratio=1.1286
+20:03:46 | INFO    |     WARN features.5.2.block.0.0                 k_l=  79  ratio=1.1833
+20:03:46 | INFO    |     WARN features.6.0.block.0.0                 k_l=  83  ratio=1.2050
+20:03:46 | INFO    |   Group d=672:
+20:03:46 | INFO    |     FAIL features.5.1.block.2.fc1               k_l=  23  ratio=2.4140
+20:03:46 | INFO    |     FAIL features.5.1.block.3.0                 k_l=  83  ratio=2.4586
+20:03:46 | INFO    |     FAIL features.5.2.block.2.fc1               k_l=  23  ratio=2.3389
+20:03:46 | INFO    |     FAIL features.5.2.block.3.0                 k_l=  81  ratio=2.4619
+20:03:46 | INFO    |     WARN features.6.0.block.2.fc1               k_l=   5  ratio=1.3965
+20:03:46 | INFO    |     FAIL features.6.0.block.3.0                 k_l= 155  ratio=2.4534
+20:03:46 | INFO    |   Group d=28:
+20:03:46 | INFO    |     OK   features.5.1.block.2.fc2               k_l=  23  ratio=1.1209
+20:03:46 | INFO    |     OK   features.5.2.block.2.fc2               k_l=  23  ratio=1.0901
+20:03:46 | INFO    |     WARN features.6.0.block.2.fc2               k_l=   5  ratio=1.3015
+20:03:46 | INFO    |   Group d=192:
+20:03:46 | INFO    |     WARN features.6.1.block.0.0                 k_l= 148  ratio=1.1693
+20:03:46 | INFO    |     WARN features.6.2.block.0.0                 k_l= 146  ratio=1.1536
+20:03:46 | INFO    |     WARN features.6.3.block.0.0                 k_l= 147  ratio=1.1598
+20:03:46 | INFO    |     WARN features.7.0.block.0.0                 k_l= 152  ratio=1.2125
+20:03:46 | INFO    |   Group d=1152:
+20:03:47 | INFO    |     FAIL features.6.1.block.2.fc1               k_l=  39  ratio=2.5042
+20:03:47 | INFO    |     FAIL features.6.1.block.3.0                 k_l= 149  ratio=2.7424
+20:03:47 | INFO    |     FAIL features.6.2.block.2.fc1               k_l=  40  ratio=2.5871
+20:03:47 | INFO    |     FAIL features.6.2.block.3.0                 k_l= 149  ratio=2.7486
+20:03:47 | INFO    |     FAIL features.6.3.block.2.fc1               k_l=  41  ratio=2.7419
+20:03:47 | INFO    |     FAIL features.6.3.block.3.0                 k_l= 150  ratio=2.7656
+20:03:47 | INFO    |     FAIL features.7.0.block.2.fc1               k_l=  39  ratio=2.5627
+20:03:47 | INFO    |     FAIL features.7.0.block.3.0                 k_l= 263  ratio=2.5984
+20:03:47 | INFO    |   Group d=48:
+20:03:47 | INFO    |     OK   features.6.1.block.2.fc2               k_l=  40  ratio=1.1364
+20:03:47 | INFO    |     WARN features.6.2.block.2.fc2               k_l=  39  ratio=1.1622
+20:03:47 | INFO    |     OK   features.6.3.block.2.fc2               k_l=  40  ratio=1.1449
+20:03:47 | INFO    |     WARN features.7.0.block.2.fc2               k_l=  37  ratio=1.1794
+20:03:48 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+20:03:49 | INFO    | =================================================================
+20:03:49 | INFO    |   PHASE 2 VERDICT — efficientnet_b0
+20:03:49 | INFO    | =================================================================
+20:03:49 | INFO    |   Mean reconstruction ratio : 1.6655
+20:03:49 | INFO    |   Max reconstruction ratio  : 2.9045
+20:03:49 | INFO    |   Layers well-served (< 1.15): 20 / 76
+20:03:49 | INFO    |   Mean nesting angle (deg)  : 20.6
+20:03:49 | INFO    |   -> SHARED BASIS INSUFFICIENT (layers too diverse for one basis)
+20:03:49 | INFO    | =================================================================
+20:03:49 | INFO    | ======================================================================
+20:03:49 | INFO    | MODEL: vit_b_16
+20:03:49 | INFO    | ======================================================================
+20:03:49 | INFO    | [1/5] Loading vit_b_16 (pretrained)...
+20:04:49 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+20:04:59 | INFO    |       38 weight matrices extracted
+20:04:59 | INFO    | [3/5] Grouping layers by input dimension...
+20:04:59 | INFO    |       2 shareable groups (input-dim shared by >1 layer)
+20:04:59 | INFO    |       d=768  : 26 layers  -> ['conv_proj', 'encoder.layers.encoder_layer_0.self_attention.out_proj', 'encoder.layers.encoder_layer_0.mlp.0', 'encoder.layers.encoder_layer_1.self_attention.out_proj', 'encoder.layers.encoder_layer_1.mlp.0', 'encoder.layers.encoder_layer_2.self_attention.out_proj', 'encoder.layers.encoder_layer_2.mlp.0', 'encoder.layers.encoder_layer_3.self_attention.out_proj', 'encoder.layers.encoder_layer_3.mlp.0', 'encoder.layers.encoder_layer_4.self_attention.out_proj', 'encoder.layers.encoder_layer_4.mlp.0', 'encoder.layers.encoder_layer_5.self_attention.out_proj', 'encoder.layers.encoder_layer_5.mlp.0', 'encoder.layers.encoder_layer_6.self_attention.out_proj', 'encoder.layers.encoder_layer_6.mlp.0', 'encoder.layers.encoder_layer_7.self_attention.out_proj', 'encoder.layers.encoder_layer_7.mlp.0', 'encoder.layers.encoder_layer_8.self_attention.out_proj', 'encoder.layers.encoder_layer_8.mlp.0', 'encoder.layers.encoder_layer_9.self_attention.out_proj', 'encoder.layers.encoder_layer_9.mlp.0', 'encoder.layers.encoder_layer_10.self_attention.out_proj', 'encoder.layers.encoder_layer_10.mlp.0', 'encoder.layers.encoder_layer_11.self_attention.out_proj', 'encoder.layers.encoder_layer_11.mlp.0', 'heads.head']
+20:04:59 | INFO    |       d=3072 : 12 layers  -> ['encoder.layers.encoder_layer_0.mlp.3', 'encoder.layers.encoder_layer_1.mlp.3', 'encoder.layers.encoder_layer_2.mlp.3', 'encoder.layers.encoder_layer_3.mlp.3', 'encoder.layers.encoder_layer_4.mlp.3', 'encoder.layers.encoder_layer_5.mlp.3', 'encoder.layers.encoder_layer_6.mlp.3', 'encoder.layers.encoder_layer_7.mlp.3', 'encoder.layers.encoder_layer_8.mlp.3', 'encoder.layers.encoder_layer_9.mlp.3', 'encoder.layers.encoder_layer_10.mlp.3', 'encoder.layers.encoder_layer_11.mlp.3']
+20:04:59 | INFO    | [4/5] Building global basis per group and measuring ratios...
+20:04:59 | INFO    |   Group d=768:
+20:05:06 | INFO    |     FAIL conv_proj                              k_l=  85  ratio=2.7193
+20:05:06 | INFO    |     FAIL encoder.layers.encoder_layer_0.self_attention.out_proj k_l= 220  ratio=2.3956
+20:05:07 | INFO    |     FAIL encoder.layers.encoder_layer_0.mlp.0   k_l= 246  ratio=2.1270
+20:05:07 | INFO    |     FAIL encoder.layers.encoder_layer_1.self_attention.out_proj k_l= 201  ratio=2.4563
+20:05:08 | INFO    |     FAIL encoder.layers.encoder_layer_1.mlp.0   k_l= 144  ratio=1.8170
+20:05:08 | INFO    |     FAIL encoder.layers.encoder_layer_2.self_attention.out_proj k_l= 251  ratio=2.3922
+20:05:08 | INFO    |     FAIL encoder.layers.encoder_layer_2.mlp.0   k_l= 166  ratio=1.7534
+20:05:09 | INFO    |     FAIL encoder.layers.encoder_layer_3.self_attention.out_proj k_l= 233  ratio=2.3817
+20:05:09 | INFO    |     FAIL encoder.layers.encoder_layer_3.mlp.0   k_l= 245  ratio=1.8121
+20:05:09 | INFO    |     FAIL encoder.layers.encoder_layer_4.self_attention.out_proj k_l= 213  ratio=2.4038
+20:05:10 | INFO    |     FAIL encoder.layers.encoder_layer_4.mlp.0   k_l= 310  ratio=1.7490
+20:05:10 | INFO    |     FAIL encoder.layers.encoder_layer_5.self_attention.out_proj k_l= 221  ratio=2.3897
+20:05:10 | INFO    |     FAIL encoder.layers.encoder_layer_5.mlp.0   k_l= 341  ratio=1.7273
+20:05:11 | INFO    |     FAIL encoder.layers.encoder_layer_6.self_attention.out_proj k_l= 244  ratio=2.3686
+20:05:11 | INFO    |     FAIL encoder.layers.encoder_layer_6.mlp.0   k_l= 350  ratio=1.6980
+20:05:11 | INFO    |     FAIL encoder.layers.encoder_layer_7.self_attention.out_proj k_l= 310  ratio=2.2636
+20:05:12 | INFO    |     FAIL encoder.layers.encoder_layer_7.mlp.0   k_l= 366  ratio=1.7101
+20:05:12 | INFO    |     FAIL encoder.layers.encoder_layer_8.self_attention.out_proj k_l= 330  ratio=2.1908
+20:05:12 | INFO    |     FAIL encoder.layers.encoder_layer_8.mlp.0   k_l= 386  ratio=1.6902
+20:05:12 | INFO    |     FAIL encoder.layers.encoder_layer_9.self_attention.out_proj k_l= 351  ratio=2.1821
+20:05:13 | INFO    |     FAIL encoder.layers.encoder_layer_9.mlp.0   k_l= 431  ratio=1.6870
+20:05:13 | INFO    |     FAIL encoder.layers.encoder_layer_10.self_attention.out_proj k_l= 361  ratio=2.1672
+20:05:14 | INFO    |     FAIL encoder.layers.encoder_layer_10.mlp.0  k_l= 476  ratio=1.6219
+20:05:14 | INFO    |     FAIL encoder.layers.encoder_layer_11.self_attention.out_proj k_l= 351  ratio=2.1962
+20:05:14 | INFO    |     FAIL encoder.layers.encoder_layer_11.mlp.0  k_l= 489  ratio=1.5932
+20:05:15 | INFO    |     FAIL heads.head                             k_l= 502  ratio=1.6863
+20:05:15 | INFO    |   Group d=3072:
+20:05:39 | INFO    |     FAIL encoder.layers.encoder_layer_0.mlp.3   k_l= 242  ratio=2.4857
+20:05:39 | INFO    |     FAIL encoder.layers.encoder_layer_1.mlp.3   k_l= 198  ratio=2.2656
+20:05:40 | INFO    |     FAIL encoder.layers.encoder_layer_2.mlp.3   k_l= 250  ratio=2.3329
+20:05:41 | INFO    |     FAIL encoder.layers.encoder_layer_3.mlp.3   k_l= 335  ratio=2.3458
+20:05:41 | INFO    |     FAIL encoder.layers.encoder_layer_4.mlp.3   k_l= 377  ratio=2.4133
+20:05:42 | INFO    |     FAIL encoder.layers.encoder_layer_5.mlp.3   k_l= 402  ratio=2.4475
+20:05:42 | INFO    |     FAIL encoder.layers.encoder_layer_6.mlp.3   k_l= 419  ratio=2.5523
+20:05:43 | INFO    |     FAIL encoder.layers.encoder_layer_7.mlp.3   k_l= 408  ratio=2.5894
+20:05:44 | INFO    |     FAIL encoder.layers.encoder_layer_8.mlp.3   k_l= 387  ratio=2.5548
+20:05:44 | INFO    |     FAIL encoder.layers.encoder_layer_9.mlp.3   k_l= 493  ratio=2.5784
+20:05:45 | INFO    |     FAIL encoder.layers.encoder_layer_10.mlp.3  k_l= 534  ratio=2.6254
+20:05:45 | INFO    |     FAIL encoder.layers.encoder_layer_11.mlp.3  k_l= 439  ratio=2.5008
+20:05:46 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+20:06:44 | ERROR   | FAILED on vit_b_16: Unable to allocate 3.97 GiB for an array with shape (23498, 22659) and data type float64
+20:06:45 | INFO    | ======================================================================
+20:06:45 | INFO    | MODEL: swin_t
+20:06:45 | INFO    | ======================================================================
+20:06:45 | INFO    | [1/5] Loading swin_t (pretrained)...
+20:07:08 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+20:07:11 | INFO    |       53 weight matrices extracted
+20:07:12 | INFO    | [3/5] Grouping layers by input dimension...
+20:07:12 | INFO    |       6 shareable groups (input-dim shared by >1 layer)
+20:07:12 | INFO    |       d=96   : 6 layers  -> ['features.1.0.attn.qkv', 'features.1.0.attn.proj', 'features.1.0.mlp.0', 'features.1.1.attn.qkv', 'features.1.1.attn.proj', 'features.1.1.mlp.0']
+20:07:12 | INFO    |       d=192  : 6 layers  -> ['features.3.0.attn.qkv', 'features.3.0.attn.proj', 'features.3.0.mlp.0', 'features.3.1.attn.qkv', 'features.3.1.attn.proj', 'features.3.1.mlp.0']
+20:07:12 | INFO    |       d=384  : 21 layers  -> ['features.1.0.mlp.3', 'features.1.1.mlp.3', 'features.2.reduction', 'features.5.0.attn.qkv', 'features.5.0.attn.proj', 'features.5.0.mlp.0', 'features.5.1.attn.qkv', 'features.5.1.attn.proj', 'features.5.1.mlp.0', 'features.5.2.attn.qkv', 'features.5.2.attn.proj', 'features.5.2.mlp.0', 'features.5.3.attn.qkv', 'features.5.3.attn.proj', 'features.5.3.mlp.0', 'features.5.4.attn.qkv', 'features.5.4.attn.proj', 'features.5.4.mlp.0', 'features.5.5.attn.qkv', 'features.5.5.attn.proj', 'features.5.5.mlp.0']
+20:07:12 | INFO    |       d=768  : 10 layers  -> ['features.3.0.mlp.3', 'features.3.1.mlp.3', 'features.4.reduction', 'features.7.0.attn.qkv', 'features.7.0.attn.proj', 'features.7.0.mlp.0', 'features.7.1.attn.qkv', 'features.7.1.attn.proj', 'features.7.1.mlp.0', 'head']
+20:07:12 | INFO    |       d=1536 : 7 layers  -> ['features.5.0.mlp.3', 'features.5.1.mlp.3', 'features.5.2.mlp.3', 'features.5.3.mlp.3', 'features.5.4.mlp.3', 'features.5.5.mlp.3', 'features.6.reduction']
+20:07:12 | INFO    |       d=3072 : 2 layers  -> ['features.7.0.mlp.3', 'features.7.1.mlp.3']
+20:07:12 | INFO    | [4/5] Building global basis per group and measuring ratios...
+20:07:12 | INFO    |   Group d=96:
+20:07:12 | INFO    |     FAIL features.1.0.attn.qkv                  k_l=  23  ratio=1.5084
+20:07:12 | INFO    |     FAIL features.1.0.attn.proj                 k_l=  45  ratio=1.8973
+20:07:12 | INFO    |     FAIL features.1.0.mlp.0                     k_l=  45  ratio=1.6093
+20:07:12 | INFO    |     FAIL features.1.1.attn.qkv                  k_l=  49  ratio=1.5984
+20:07:12 | INFO    |     FAIL features.1.1.attn.proj                 k_l=  49  ratio=1.8190
+20:07:12 | INFO    |     FAIL features.1.1.mlp.0                     k_l=  60  ratio=1.5275
+20:07:12 | INFO    |   Group d=384:
+20:07:13 | INFO    |     FAIL features.1.0.mlp.3                     k_l=  58  ratio=2.6142
+20:07:13 | INFO    |     FAIL features.1.1.mlp.3                     k_l=  53  ratio=2.5315
+20:07:13 | INFO    |     FAIL features.2.reduction                   k_l= 125  ratio=2.3927
+20:07:13 | INFO    |     FAIL features.5.0.attn.qkv                  k_l= 137  ratio=1.9138
+20:07:13 | INFO    |     FAIL features.5.0.attn.proj                 k_l= 171  ratio=2.1778
+20:07:13 | INFO    |     FAIL features.5.0.mlp.0                     k_l= 218  ratio=1.7944
+20:07:13 | INFO    |     FAIL features.5.1.attn.qkv                  k_l= 181  ratio=1.6803
+20:07:13 | INFO    |     FAIL features.5.1.attn.proj                 k_l= 165  ratio=2.1895
+20:07:13 | INFO    |     FAIL features.5.1.mlp.0                     k_l= 245  ratio=1.5636
+20:07:13 | INFO    |     FAIL features.5.2.attn.qkv                  k_l= 202  ratio=1.6437
+20:07:14 | INFO    |     FAIL features.5.2.attn.proj                 k_l= 175  ratio=2.1483
+20:07:14 | INFO    |     FAIL features.5.2.mlp.0                     k_l= 245  ratio=1.5409
+20:07:14 | INFO    |     FAIL features.5.3.attn.qkv                  k_l= 204  ratio=1.5913
+20:07:14 | INFO    |     FAIL features.5.3.attn.proj                 k_l= 175  ratio=2.1212
+20:07:14 | INFO    |     FAIL features.5.3.mlp.0                     k_l= 245  ratio=1.5374
+20:07:14 | INFO    |     FAIL features.5.4.attn.qkv                  k_l= 220  ratio=1.5841
+20:07:14 | INFO    |     FAIL features.5.4.attn.proj                 k_l= 198  ratio=2.0485
+20:07:14 | INFO    |     FAIL features.5.4.mlp.0                     k_l= 241  ratio=1.5909
+20:07:14 | INFO    |     FAIL features.5.5.attn.qkv                  k_l= 219  ratio=1.6232
+20:07:14 | INFO    |     FAIL features.5.5.attn.proj                 k_l= 196  ratio=2.0601
+20:07:14 | INFO    |     FAIL features.5.5.mlp.0                     k_l= 238  ratio=1.6040
+20:07:14 | INFO    |   Group d=192:
+20:07:15 | INFO    |     FAIL features.3.0.attn.qkv                  k_l=  82  ratio=1.5447
+20:07:15 | INFO    |     FAIL features.3.0.attn.proj                 k_l=  93  ratio=1.8228
+20:07:15 | INFO    |     FAIL features.3.0.mlp.0                     k_l= 134  ratio=1.5682
+20:07:15 | INFO    |     FAIL features.3.1.attn.qkv                  k_l= 102  ratio=1.5320
+20:07:15 | INFO    |     FAIL features.3.1.attn.proj                 k_l=  98  ratio=1.7734
+20:07:15 | INFO    |     WARN features.3.1.mlp.0                     k_l= 129  ratio=1.4032
+20:07:15 | INFO    |   Group d=768:
+20:07:18 | INFO    |     FAIL features.3.0.mlp.3                     k_l= 110  ratio=2.2115
+20:07:18 | INFO    |     FAIL features.3.1.mlp.3                     k_l=  94  ratio=2.1363
+20:07:18 | INFO    |     FAIL features.4.reduction                   k_l= 183  ratio=2.2994
+20:07:18 | INFO    |     FAIL features.7.0.attn.qkv                  k_l= 251  ratio=1.8576
+20:07:19 | INFO    |     FAIL features.7.0.attn.proj                 k_l= 394  ratio=1.9435
+20:07:19 | INFO    |     FAIL features.7.0.mlp.0                     k_l= 411  ratio=1.6015
+20:07:19 | INFO    |     FAIL features.7.1.attn.qkv                  k_l= 450  ratio=1.5641
+20:07:20 | INFO    |     FAIL features.7.1.attn.proj                 k_l= 403  ratio=1.8768
+20:07:20 | INFO    |     WARN features.7.1.mlp.0                     k_l= 503  ratio=1.4571
+20:07:20 | INFO    |     FAIL head                                   k_l= 534  ratio=1.6595
+20:07:20 | INFO    |   Group d=1536:
+20:07:22 | INFO    |     FAIL features.5.0.mlp.3                     k_l= 234  ratio=2.2944
+20:07:23 | INFO    |     FAIL features.5.1.mlp.3                     k_l= 244  ratio=2.3189
+20:07:23 | INFO    |     FAIL features.5.2.mlp.3                     k_l= 248  ratio=2.3293
+20:07:23 | INFO    |     FAIL features.5.3.mlp.3                     k_l= 247  ratio=2.3500
+20:07:23 | INFO    |     FAIL features.5.4.mlp.3                     k_l= 244  ratio=2.3619
+20:07:23 | INFO    |     FAIL features.5.5.mlp.3                     k_l= 232  ratio=2.3746
+20:07:24 | INFO    |     FAIL features.6.reduction                   k_l= 298  ratio=2.4795
+20:07:24 | INFO    |   Group d=3072:
+20:07:26 | INFO    |     FAIL features.7.0.mlp.3                     k_l= 527  ratio=1.6912
+20:07:27 | INFO    |     FAIL features.7.1.mlp.3                     k_l= 541  ratio=1.7526
+20:07:27 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+20:08:06 | INFO    | =================================================================
+20:08:06 | INFO    |   PHASE 2 VERDICT — swin_t
+20:08:06 | INFO    | =================================================================
+20:08:06 | INFO    |   Mean reconstruction ratio : 1.8868
+20:08:06 | INFO    |   Max reconstruction ratio  : 2.6142
+20:08:06 | INFO    |   Layers well-served (< 1.15): 0 / 52
+20:08:06 | INFO    |   Mean nesting angle (deg)  : 38.1
+20:08:06 | INFO    |   -> SHARED BASIS INSUFFICIENT (layers too diverse for one basis)
+20:08:06 | INFO    | =================================================================
+20:08:06 | INFO    |   Saved → D:\coding\Resultant_vector_hypothesis\experiments\..\results\model_analysis\summary\cross_model_comparison.png
+20:08:06 | INFO    | ======================================================================
+20:08:06 | INFO    | CROSS-MODEL SUMMARY
+20:08:06 | INFO    | ======================================================================
+20:08:06 | INFO    | model                    mean_r    max_r  frac_ok  verdict
+20:08:06 | INFO    | resnet18                 2.0587   2.3233     0.00  INSUFFICIENT
+20:08:06 | INFO    | resnet50                 1.8750   2.4252     0.00  INSUFFICIENT
+20:08:06 | INFO    | vgg16                    1.7683   2.1051     0.00  INSUFFICIENT
+20:08:06 | INFO    | densenet121                 nan      nan      nan  ERROR
+20:08:06 | INFO    | mobilenet_v3_large       1.5547   2.9525     0.10  INSUFFICIENT
+20:08:06 | INFO    | efficientnet_b0          1.6655   2.9045     0.26  INSUFFICIENT
+20:08:06 | INFO    | vit_b_16                    nan      nan      nan  ERROR
+20:08:06 | INFO    | swin_t                   1.8868   2.6142     0.00  INSUFFICIENT
+20:08:06 | INFO    | Outputs written under: D:\coding\Resultant_vector_hypothesis\results\model_analysis

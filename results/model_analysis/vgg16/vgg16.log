@@ -1,0 +1,40 @@
+19:55:50 | INFO    | [1/5] Loading vgg16 (pretrained)...
+19:57:28 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+20:01:04 | INFO    |       16 weight matrices extracted
+20:01:05 | INFO    | [3/5] Grouping layers by input dimension...
+20:01:05 | INFO    |       5 shareable groups (input-dim shared by >1 layer)
+20:01:05 | INFO    |       d=576  : 2 layers  -> ['features.2', 'features.5']
+20:01:05 | INFO    |       d=1152 : 2 layers  -> ['features.7', 'features.10']
+20:01:05 | INFO    |       d=2304 : 3 layers  -> ['features.12', 'features.14', 'features.17']
+20:01:05 | INFO    |       d=4096 : 2 layers  -> ['classifier.3', 'classifier.6']
+20:01:05 | INFO    |       d=4608 : 5 layers  -> ['features.19', 'features.21', 'features.24', 'features.26', 'features.28']
+20:01:05 | INFO    | [4/5] Building global basis per group and measuring ratios...
+20:01:05 | INFO    |   Group d=576:
+20:01:05 | INFO    |     FAIL features.2                             k_l=  31  ratio=1.5842
+20:01:05 | INFO    |     WARN features.5                             k_l=  58  ratio=1.4644
+20:01:05 | INFO    |   Group d=1152:
+20:01:05 | INFO    |     FAIL features.7                             k_l=  80  ratio=1.6243
+20:01:05 | INFO    |     FAIL features.10                            k_l= 131  ratio=1.5540
+20:01:05 | INFO    |   Group d=2304:
+20:01:06 | INFO    |     FAIL features.12                            k_l= 160  ratio=1.8546
+20:01:06 | INFO    |     FAIL features.14                            k_l= 169  ratio=1.8890
+20:01:06 | INFO    |     FAIL features.17                            k_l= 273  ratio=1.8002
+20:01:06 | INFO    |   Group d=4608:
+20:01:27 | INFO    |     FAIL features.19                            k_l= 330  ratio=2.0750
+20:01:28 | INFO    |     FAIL features.21                            k_l= 343  ratio=2.1051
+20:01:28 | INFO    |     FAIL features.24                            k_l= 336  ratio=2.0948
+20:01:30 | INFO    |     FAIL features.26                            k_l= 329  ratio=2.0390
+20:01:30 | INFO    |     FAIL features.28                            k_l= 319  ratio=2.0063
+20:01:30 | INFO    |   Group d=4096:
+20:03:02 | INFO    |     WARN classifier.3                           k_l=1541  ratio=1.3000
+20:03:04 | INFO    |     WARN classifier.6                           k_l= 544  ratio=1.3650
+20:03:04 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+20:03:10 | INFO    | =================================================================
+20:03:10 | INFO    |   PHASE 2 VERDICT — vgg16
+20:03:10 | INFO    | =================================================================
+20:03:10 | INFO    |   Mean reconstruction ratio : 1.7683
+20:03:10 | INFO    |   Max reconstruction ratio  : 2.1051
+20:03:10 | INFO    |   Layers well-served (< 1.15): 0 / 14
+20:03:10 | INFO    |   Mean nesting angle (deg)  : 67.0
+20:03:10 | INFO    |   -> SHARED BASIS INSUFFICIENT (layers too diverse for one basis)
+20:03:10 | INFO    | =================================================================

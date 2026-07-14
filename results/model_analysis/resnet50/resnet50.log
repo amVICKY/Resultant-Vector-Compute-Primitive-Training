@@ -1,0 +1,89 @@
+19:55:05 | INFO    | [1/5] Loading resnet50 (pretrained)...
+19:55:23 | INFO    | [2/5] Extracting weights and computing k_l per layer...
+19:55:27 | INFO    |       54 weight matrices extracted
+19:55:27 | INFO    | [3/5] Grouping layers by input dimension...
+19:55:27 | INFO    |       10 shareable groups (input-dim shared by >1 layer)
+19:55:27 | INFO    |       d=64   : 5 layers  -> ['layer1.0.conv1', 'layer1.0.conv3', 'layer1.0.downsample.0', 'layer1.1.conv3', 'layer1.2.conv3']
+19:55:27 | INFO    |       d=128  : 4 layers  -> ['layer2.0.conv3', 'layer2.1.conv3', 'layer2.2.conv3', 'layer2.3.conv3']
+19:55:27 | INFO    |       d=256  : 10 layers  -> ['layer1.1.conv1', 'layer1.2.conv1', 'layer2.0.conv1', 'layer2.0.downsample.0', 'layer3.0.conv3', 'layer3.1.conv3', 'layer3.2.conv3', 'layer3.3.conv3', 'layer3.4.conv3', 'layer3.5.conv3']
+19:55:27 | INFO    |       d=512  : 8 layers  -> ['layer2.1.conv1', 'layer2.2.conv1', 'layer2.3.conv1', 'layer3.0.conv1', 'layer3.0.downsample.0', 'layer4.0.conv3', 'layer4.1.conv3', 'layer4.2.conv3']
+19:55:27 | INFO    |       d=576  : 3 layers  -> ['layer1.0.conv2', 'layer1.1.conv2', 'layer1.2.conv2']
+19:55:27 | INFO    |       d=1024 : 7 layers  -> ['layer3.1.conv1', 'layer3.2.conv1', 'layer3.3.conv1', 'layer3.4.conv1', 'layer3.5.conv1', 'layer4.0.conv1', 'layer4.0.downsample.0']
+19:55:27 | INFO    |       d=1152 : 4 layers  -> ['layer2.0.conv2', 'layer2.1.conv2', 'layer2.2.conv2', 'layer2.3.conv2']
+19:55:27 | INFO    |       d=2048 : 3 layers  -> ['layer4.1.conv1', 'layer4.2.conv1', 'fc']
+19:55:27 | INFO    |       d=2304 : 6 layers  -> ['layer3.0.conv2', 'layer3.1.conv2', 'layer3.2.conv2', 'layer3.3.conv2', 'layer3.4.conv2', 'layer3.5.conv2']
+19:55:27 | INFO    |       d=4608 : 3 layers  -> ['layer4.0.conv2', 'layer4.1.conv2', 'layer4.2.conv2']
+19:55:27 | INFO    | [4/5] Building global basis per group and measuring ratios...
+19:55:27 | INFO    |   Group d=64:
+19:55:27 | INFO    |     FAIL layer1.0.conv1                         k_l=  25  ratio=1.5542
+19:55:27 | INFO    |     FAIL layer1.0.conv3                         k_l=  37  ratio=1.6268
+19:55:27 | INFO    |     WARN layer1.0.downsample.0                  k_l=  36  ratio=1.4749
+19:55:27 | INFO    |     FAIL layer1.1.conv3                         k_l=  41  ratio=1.6005
+19:55:27 | INFO    |     FAIL layer1.2.conv3                         k_l=  41  ratio=1.6229
+19:55:27 | INFO    |   Group d=576:
+19:55:27 | INFO    |     FAIL layer1.0.conv2                         k_l=  34  ratio=2.0208
+19:55:27 | INFO    |     FAIL layer1.1.conv2                         k_l=  44  ratio=2.1464
+19:55:27 | INFO    |     FAIL layer1.2.conv2                         k_l=  43  ratio=2.1116
+19:55:27 | INFO    |   Group d=256:
+19:55:27 | INFO    |     FAIL layer1.1.conv1                         k_l=  38  ratio=1.9392
+19:55:27 | INFO    |     FAIL layer1.2.conv1                         k_l=  39  ratio=2.0132
+19:55:27 | INFO    |     FAIL layer2.0.conv1                         k_l=  65  ratio=1.9078
+19:55:27 | INFO    |     FAIL layer2.0.downsample.0                  k_l= 103  ratio=1.6290
+19:55:27 | INFO    |     FAIL layer3.0.conv3                         k_l= 157  ratio=1.7508
+19:55:27 | INFO    |     FAIL layer3.1.conv3                         k_l= 156  ratio=1.6885
+19:55:28 | INFO    |     FAIL layer3.2.conv3                         k_l= 150  ratio=1.7218
+19:55:28 | INFO    |     FAIL layer3.3.conv3                         k_l= 157  ratio=1.6826
+19:55:28 | INFO    |     FAIL layer3.4.conv3                         k_l= 152  ratio=1.7171
+19:55:28 | INFO    |     FAIL layer3.5.conv3                         k_l= 164  ratio=1.6512
+19:55:28 | INFO    |   Group d=1152:
+19:55:28 | INFO    |     FAIL layer2.0.conv2                         k_l=  85  ratio=2.3062
+19:55:28 | INFO    |     FAIL layer2.1.conv2                         k_l=  77  ratio=2.0920
+19:55:28 | INFO    |     FAIL layer2.2.conv2                         k_l=  84  ratio=2.2786
+19:55:28 | INFO    |     FAIL layer2.3.conv2                         k_l=  88  ratio=2.2906
+19:55:28 | INFO    |   Group d=128:
+19:55:28 | INFO    |     FAIL layer2.0.conv3                         k_l=  80  ratio=1.5326
+19:55:28 | INFO    |     FAIL layer2.1.conv3                         k_l=  75  ratio=1.5197
+19:55:28 | INFO    |     FAIL layer2.2.conv3                         k_l=  76  ratio=1.5306
+19:55:28 | INFO    |     WARN layer2.3.conv3                         k_l=  79  ratio=1.4964
+19:55:28 | INFO    |   Group d=512:
+19:55:30 | INFO    |     FAIL layer2.1.conv1                         k_l=  71  ratio=1.9583
+19:55:30 | INFO    |     FAIL layer2.2.conv1                         k_l=  76  ratio=2.0246
+19:55:30 | INFO    |     FAIL layer2.3.conv1                         k_l=  78  ratio=1.9990
+19:55:30 | INFO    |     FAIL layer3.0.conv1                         k_l= 122  ratio=1.9007
+19:55:30 | INFO    |     FAIL layer3.0.downsample.0                  k_l= 236  ratio=1.5677
+19:55:30 | INFO    |     FAIL layer4.0.conv3                         k_l= 365  ratio=1.5023
+19:55:31 | INFO    |     FAIL layer4.1.conv3                         k_l= 344  ratio=1.5571
+19:55:31 | INFO    |     FAIL layer4.2.conv3                         k_l= 291  ratio=1.6091
+19:55:31 | INFO    |   Group d=2304:
+19:55:34 | INFO    |     FAIL layer3.0.conv2                         k_l= 150  ratio=2.2126
+19:55:34 | INFO    |     FAIL layer3.1.conv2                         k_l= 164  ratio=2.3459
+19:55:34 | INFO    |     FAIL layer3.2.conv2                         k_l= 172  ratio=2.4252
+19:55:34 | INFO    |     FAIL layer3.3.conv2                         k_l= 173  ratio=2.3498
+19:55:34 | INFO    |     FAIL layer3.4.conv2                         k_l= 175  ratio=2.3512
+19:55:34 | INFO    |     FAIL layer3.5.conv2                         k_l= 170  ratio=2.2424
+19:55:34 | INFO    |   Group d=1024:
+19:55:36 | INFO    |     FAIL layer3.1.conv1                         k_l= 145  ratio=2.0523
+19:55:36 | INFO    |     FAIL layer3.2.conv1                         k_l= 144  ratio=1.9987
+19:55:36 | INFO    |     FAIL layer3.3.conv1                         k_l= 162  ratio=2.0187
+19:55:36 | INFO    |     FAIL layer3.4.conv1                         k_l= 161  ratio=2.0374
+19:55:36 | INFO    |     FAIL layer3.5.conv1                         k_l= 172  ratio=2.0708
+19:55:36 | INFO    |     FAIL layer4.0.conv1                         k_l= 279  ratio=1.9576
+19:55:37 | INFO    |     FAIL layer4.0.downsample.0                  k_l= 574  ratio=1.6161
+19:55:37 | INFO    |   Group d=4608:
+19:55:41 | INFO    |     FAIL layer4.0.conv2                         k_l= 302  ratio=1.7161
+19:55:41 | INFO    |     FAIL layer4.1.conv2                         k_l= 342  ratio=1.8402
+19:55:42 | INFO    |     FAIL layer4.2.conv2                         k_l= 321  ratio=1.8336
+19:55:42 | INFO    |   Group d=2048:
+19:55:45 | INFO    |     FAIL layer4.1.conv1                         k_l= 351  ratio=1.8187
+19:55:46 | INFO    |     FAIL layer4.2.conv1                         k_l= 355  ratio=1.7393
+19:55:46 | INFO    |     FAIL fc                                     k_l= 678  ratio=1.7243
+19:55:47 | INFO    | [5/5] Testing nesting hypothesis on largest group...
+19:55:49 | INFO    | =================================================================
+19:55:50 | INFO    |   PHASE 2 VERDICT — resnet50
+19:55:50 | INFO    | =================================================================
+19:55:50 | INFO    |   Mean reconstruction ratio : 1.8750
+19:55:50 | INFO    |   Max reconstruction ratio  : 2.4252
+19:55:50 | INFO    |   Layers well-served (< 1.15): 0 / 53
+19:55:50 | INFO    |   Mean nesting angle (deg)  : 37.3
+19:55:50 | INFO    |   -> SHARED BASIS INSUFFICIENT (layers too diverse for one basis)
+19:55:50 | INFO    | =================================================================
